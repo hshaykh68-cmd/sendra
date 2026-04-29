@@ -1,5 +1,7 @@
 package com.sendra.connection.manager
 
+import com.sendra.connection.controller.HotspotController
+import com.sendra.connection.controller.WifiDirectController
 import com.sendra.connection.transport.*
 import com.sendra.core.constants.SendraConstants
 import com.sendra.core.dispatcher.DispatcherProvider

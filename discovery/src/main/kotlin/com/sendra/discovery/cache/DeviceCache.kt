@@ -29,15 +29,16 @@ class DeviceCache @Inject constructor() {
         val existing = deviceMap[device.id]
         
         // Smooth signal strength if device existed
-        val smoothedDevice = if (existing != null && device.signalStrength != null) {
+        val deviceSignalStrength = device.signalStrength
+        val smoothedDevice = if (existing != null && deviceSignalStrength != null) {
             val existingRssi = existing.device.signalStrength?.rssi
-            val newRssi = device.signalStrength.rssi
-            
+            val newRssi = deviceSignalStrength.rssi
+
             if (existingRssi != null) {
                 // 70/30 smoothing
                 val smoothedRssi = (existingRssi * 0.7 + newRssi * 0.3).toInt()
                 device.copy(
-                    signalStrength = device.signalStrength.copy(
+                    signalStrength = deviceSignalStrength.copy(
                         rssi = smoothedRssi,
                         level = normalizeRssi(smoothedRssi)
                     )
