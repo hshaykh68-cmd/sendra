@@ -3,9 +3,6 @@ workflows:
     name: Sendra Debug Build
     environment:
       java: 17
-    cache:
-      cache_paths:
-        - $HOME/.gradle
     scripts:
       - name: Download Gradle Wrapper
         script: |
