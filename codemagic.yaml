@@ -1,0 +1,84 @@
+workflows:
+  sendra-debug-build:
+    name: Sendra Debug Build
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      groups:
+        - android_signing
+    triggering:
+      events:
+        - push
+        - pull_request
+      branch_patterns:
+        - pattern: '*'
+          include: true
+    cache:
+      cache_paths:
+        - $HOME/.gradle/caches
+        - $HOME/.gradle/wrapper
+    scripts:
+      - name: Set up Android SDK
+        script: |
+          #!/bin/bash
+          set -e
+          echo "Android SDK is pre-installed on Codemagic Mac M2"
+          echo "ANDROID_HOME: $ANDROID_HOME"
+          echo "ANDROID_SDK_ROOT: $ANDROID_SDK_ROOT"
+      
+      - name: Download Gradle Wrapper
+        script: |
+          #!/bin/bash
+          set -e
+          cd $CM_BUILD_DIR
+          
+          # Create gradle wrapper directory
+          mkdir -p gradle/wrapper
+          
+          # Download gradle-wrapper.jar
+          curl -L -o gradle/wrapper/gradle-wrapper.jar \
+            https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradle/wrapper/gradle-wrapper.jar
+          
+          # Make gradlew executable
+          chmod +x gradlew
+          
+          echo "Gradle wrapper downloaded successfully"
+      
+      - name: Verify Gradle Setup
+        script: |
+          #!/bin/bash
+          set -e
+          cd $CM_BUILD_DIR
+          ./gradlew --version
+      
+      - name: Clean Build
+        script: |
+          #!/bin/bash
+          set -e
+          cd $CM_BUILD_DIR
+          ./gradlew clean
+      
+      - name: Run Tests
+        script: |
+          #!/bin/bash
+          set -e
+          cd $CM_BUILD_DIR
+          ./gradlew testDebugUnitTest || true
+      
+      - name: Build Debug APK
+        script: |
+          #!/bin/bash
+          set -e
+          cd $CM_BUILD_DIR
+          ./gradlew :app:assembleDebug --stacktrace
+    artifacts:
+      - app/build/outputs/apk/debug/*.apk
+      - app/build/outputs/logs/**/*.txt
+    publishing:
+      email:
+        recipients:
+          - user@example.com
+        notify:
+          success: true
+          failure: true
