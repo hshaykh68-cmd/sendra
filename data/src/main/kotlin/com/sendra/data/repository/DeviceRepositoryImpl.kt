@@ -95,6 +95,8 @@ class DeviceRepositoryImpl @Inject constructor(
             trustStatus = trustStatus.name,
             rssi = signalStrength?.rssi,
             lastSeen = lastSeen,
+            lastConnected = null,
+            connectionCount = 0,
             isBlocked = trustStatus == TrustStatus.BLOCKED
         )
     }
@@ -104,13 +106,13 @@ class DeviceRepositoryImpl @Inject constructor(
             id = id,
             name = name,
             type = DeviceType.valueOf(type),
-            capabilities = DeviceCapabilities.fromBitmask(capabilities),
+            capabilities = capabilitiesFromBitmask(capabilities),
             connectionInfo = ConnectionInfo(
                 ipAddress = ipAddress,
                 port = port,
                 connectionMethod = ConnectionMethod.valueOf(connectionMethod)
             ),
-            signalStrength = rssi?.let { 
+            signalStrength = rssi?.let {
                 SignalStrength(
                     rssi = it,
                     level = normalizeRssi(it)
@@ -120,7 +122,7 @@ class DeviceRepositoryImpl @Inject constructor(
             lastSeen = lastSeen
         )
     }
-    
+
     private fun DeviceCapabilities.toBitmask(): Int {
         var mask = 0
         if (canSend) mask = mask or 0x01
@@ -129,8 +131,8 @@ class DeviceRepositoryImpl @Inject constructor(
         if (supportsResume) mask = mask or 0x08
         return mask
     }
-    
-    private fun DeviceCapabilities.Companion.fromBitmask(mask: Int): DeviceCapabilities {
+
+    private fun capabilitiesFromBitmask(mask: Int): DeviceCapabilities {
         return DeviceCapabilities(
             canSend = mask and 0x01 != 0,
             canReceive = mask and 0x02 != 0,
