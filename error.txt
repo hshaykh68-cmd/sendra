@@ -1,8 +1,3 @@
-Build Debug APK
-5m 52s
-
-
-
 Show command
 Downloading https://services.gradle.org/distributions/gradle-8.2-bin.zip
 ............10%............20%............30%.............40%............50%............60%............70%.............80%............90%............100%
@@ -27,121 +22,123 @@ Installing Android SDK Build-Tools 34 in /usr/local/share/android-sdk/build-tool
 "Install Android SDK Build-Tools 34 v.34.0.0" complete.
 "Install Android SDK Build-Tools 34 v.34.0.0" finished.
 > Task :connection:preBuild UP-TO-DATE
-> Task :data:preBuild UP-TO-DATE
-> Task :core:preBuild UP-TO-DATE
-> Task :discovery:preBuild UP-TO-DATE
+> Task :domain:preBuild UP-TO-DATE
 > Task :app:preBuild UP-TO-DATE
 > Task :platform:preBuild UP-TO-DATE
-> Task :domain:preBuild UP-TO-DATE
+> Task :discovery:preBuild UP-TO-DATE
+> Task :data:preBuild UP-TO-DATE
+> Task :core:preBuild UP-TO-DATE
 > Task :core:preDebugBuild UP-TO-DATE
-> Task :domain:preDebugBuild UP-TO-DATE
-> Task :data:preDebugBuild UP-TO-DATE
-> Task :discovery:preDebugBuild UP-TO-DATE
 > Task :connection:preDebugBuild UP-TO-DATE
+> Task :discovery:preDebugBuild UP-TO-DATE
 > Task :app:preDebugBuild UP-TO-DATE
-> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :data:preDebugBuild UP-TO-DATE
 > Task :platform:preDebugBuild UP-TO-DATE
+> Task :domain:preDebugBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
 > Task :transfer:preBuild UP-TO-DATE
 > Task :transfer:preDebugBuild UP-TO-DATE
 > Task :app:generateDebugBuildConfig
 > Task :ui:preBuild UP-TO-DATE
 > Task :ui:preDebugBuild UP-TO-DATE
+> Task :platform:writeDebugAarMetadata
 > Task :connection:writeDebugAarMetadata
+> Task :transfer:writeDebugAarMetadata
+> Task :data:writeDebugAarMetadata
+> Task :discovery:writeDebugAarMetadata
 > Task :core:writeDebugAarMetadata
 > Task :domain:writeDebugAarMetadata
 > Task :ui:writeDebugAarMetadata
-> Task :discovery:writeDebugAarMetadata
-> Task :platform:writeDebugAarMetadata
-> Task :transfer:writeDebugAarMetadata
-> Task :data:writeDebugAarMetadata
+> Task :core:generateDebugResValues
+> Task :core:generateDebugResources
+> Task :data:generateDebugResValues
+> Task :data:generateDebugResources
+> Task :connection:generateDebugResValues
 > Task :app:generateDebugResValues
-> Task :discovery:generateDebugResValues FROM-CACHE
-> Task :connection:generateDebugResValues FROM-CACHE
-> Task :domain:generateDebugResValues FROM-CACHE
+> Task :domain:generateDebugResValues
+> Task :platform:generateDebugResValues
+> Task :domain:generateDebugResources
+> Task :discovery:generateDebugResValues
+> Task :discovery:generateDebugResources
+> Task :connection:generateDebugResources
+> Task :platform:generateDebugResources
 > Task :transfer:generateDebugResValues FROM-CACHE
-> Task :data:generateDebugResValues FROM-CACHE
-> Task :platform:generateDebugResValues FROM-CACHE
-> Task :core:generateDebugResValues FROM-CACHE
-> Task :data:generateDebugResources UP-TO-DATE
-> Task :domain:generateDebugResources UP-TO-DATE
-> Task :connection:generateDebugResources UP-TO-DATE
-> Task :platform:generateDebugResources UP-TO-DATE
-> Task :discovery:generateDebugResources UP-TO-DATE
-> Task :core:generateDebugResources UP-TO-DATE
 > Task :transfer:generateDebugResources UP-TO-DATE
-> Task :discovery:packageDebugResources
 > Task :platform:packageDebugResources
-> Task :data:packageDebugResources
-> Task :transfer:packageDebugResources
-> Task :app:generateDebugResources
-> Task :connection:packageDebugResources
-> Task :domain:packageDebugResources
 > Task :core:packageDebugResources
+> Task :app:generateDebugResources
+> Task :transfer:packageDebugResources
+> Task :data:packageDebugResources
+> Task :domain:packageDebugResources
+> Task :connection:packageDebugResources
+> Task :discovery:packageDebugResources
 > Task :ui:generateDebugResValues FROM-CACHE
 > Task :ui:generateDebugResources UP-TO-DATE
-> Task :app:extractDeepLinksDebug
 > Task :connection:extractDeepLinksDebug
+> Task :app:extractDeepLinksDebug
 > Task :core:extractDeepLinksDebug
 > Task :data:extractDeepLinksDebug FROM-CACHE
-> Task :ui:packageDebugResources
 > Task :discovery:extractDeepLinksDebug FROM-CACHE
+> Task :ui:packageDebugResources
 > Task :app:createDebugCompatibleScreenManifests
-> Task :app:packageDebugResources
-> Task :data:processDebugManifest
-> Task :domain:extractDeepLinksDebug FROM-CACHE
-> Task :domain:processDebugManifest
-> Task :platform:extractDeepLinksDebug FROM-CACHE
-> Task :platform:processDebugManifest
-> Task :transfer:extractDeepLinksDebug FROM-CACHE
-> Task :transfer:processDebugManifest
-> Task :ui:extractDeepLinksDebug FROM-CACHE
-> Task :ui:processDebugManifest
 > Task :core:processDebugManifest
 > Task :connection:processDebugManifest
-> Task :discovery:processDebugManifest
-> Task :connection:parseDebugLocalResources
+> Task :domain:extractDeepLinksDebug FROM-CACHE
+> Task :platform:extractDeepLinksDebug FROM-CACHE
+> Task :app:packageDebugResources
+> Task :platform:processDebugManifest
+> Task :transfer:extractDeepLinksDebug FROM-CACHE
 > Task :app:parseDebugLocalResources
+> Task :ui:extractDeepLinksDebug FROM-CACHE
+> Task :transfer:processDebugManifest
+> Task :ui:processDebugManifest
+> Task :connection:parseDebugLocalResources
+> Task :data:processDebugManifest
+> Task :discovery:processDebugManifest
+> Task :domain:processDebugManifest
 > Task :core:parseDebugLocalResources FROM-CACHE
-> Task :core:compileDebugLibraryResources
-> Task :data:compileDebugLibraryResources FROM-CACHE
-> Task :data:parseDebugLocalResources FROM-CACHE
-> Task :core:generateDebugRFile
-> Task :discovery:compileDebugLibraryResources FROM-CACHE
-> Task :discovery:parseDebugLocalResources FROM-CACHE
 > Task :connection:generateDebugRFile
-> Task :domain:compileDebugLibraryResources FROM-CACHE
-> Task :discovery:generateDebugRFile
-> Task :domain:parseDebugLocalResources FROM-CACHE
-> Task :platform:compileDebugLibraryResources FROM-CACHE
+> Task :core:generateDebugRFile
+> Task :data:parseDebugLocalResources FROM-CACHE
 > Task :data:generateDebugRFile
+> Task :discovery:compileDebugLibraryResources
+> Task :discovery:parseDebugLocalResources FROM-CACHE
+> Task :discovery:generateDebugRFile
+> Task :domain:compileDebugLibraryResources FROM-CACHE
+> Task :domain:parseDebugLocalResources FROM-CACHE
+> Task :core:compileDebugLibraryResources
+> Task :platform:compileDebugLibraryResources FROM-CACHE
 > Task :platform:parseDebugLocalResources FROM-CACHE
-> Task :transfer:compileDebugLibraryResources FROM-CACHE
-> Task :transfer:parseDebugLocalResources FROM-CACHE
 > Task :connection:compileDebugLibraryResources
+> Task :transfer:compileDebugLibraryResources FROM-CACHE
+> Task :data:compileDebugLibraryResources
 > Task :domain:generateDebugRFile
+> Task :transfer:parseDebugLocalResources FROM-CACHE
+> Task :ui:parseDebugLocalResources FROM-CACHE
 > Task :ui:compileDebugLibraryResources FROM-CACHE
 > Task :connection:checkKotlinGradlePluginConfigurationErrors
 > Task :core:checkKotlinGradlePluginConfigurationErrors
-> Task :ui:parseDebugLocalResources FROM-CACHE
 > Task :platform:generateDebugRFile
 > Task :ui:generateDebugRFile
-> Task :core:javaPreCompileDebug
-> Task :domain:checkKotlinGradlePluginConfigurationErrors
 > Task :data:checkKotlinGradlePluginConfigurationErrors
-> Task :domain:javaPreCompileDebug FROM-CACHE
+> Task :domain:checkKotlinGradlePluginConfigurationErrors
 > Task :transfer:generateDebugRFile
+> Task :core:javaPreCompileDebug
+> Task :domain:javaPreCompileDebug
 > Task :discovery:checkKotlinGradlePluginConfigurationErrors
-> Task :connection:javaPreCompileDebug
+> Task :discovery:javaPreCompileDebug FROM-CACHE
 > Task :platform:checkKotlinGradlePluginConfigurationErrors
 > Task :transfer:checkKotlinGradlePluginConfigurationErrors
 > Task :transfer:javaPreCompileDebug FROM-CACHE
-> Task :discovery:javaPreCompileDebug
+> Task :data:javaPreCompileDebug
 > Task :ui:checkKotlinGradlePluginConfigurationErrors
 > Task :ui:javaPreCompileDebug FROM-CACHE
 > Task :app:javaPreCompileDebug
-> Task :platform:javaPreCompileDebug
-> Task :connection:mergeDebugShaders
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :connection:mergeDebugShaders FROM-CACHE
 > Task :connection:compileDebugShaders NO-SOURCE
 > Task :connection:generateDebugAssets UP-TO-DATE
 > Task :connection:packageDebugAssets FROM-CACHE
@@ -173,45 +170,43 @@ Installing Android SDK Build-Tools 34 in /usr/local/share/android-sdk/build-tool
 > Task :ui:compileDebugShaders NO-SOURCE
 > Task :ui:generateDebugAssets UP-TO-DATE
 > Task :ui:packageDebugAssets FROM-CACHE
-> Task :app:desugarDebugFileDependencies
 > Task :app:mapDebugSourceSetPaths
+> Task :app:desugarDebugFileDependencies
+> Task :app:checkDebugAarMetadata
 > Task :app:mergeDebugJniLibFolders FROM-CACHE
 > Task :connection:mergeDebugJniLibFolders FROM-CACHE
 > Task :connection:mergeDebugNativeLibs NO-SOURCE
-> Task :data:javaPreCompileDebug
+> Task :connection:copyDebugJniLibsProjectOnly
 > Task :core:mergeDebugJniLibFolders FROM-CACHE
 > Task :core:mergeDebugNativeLibs NO-SOURCE
-> Task :app:mergeDebugShaders
-> Task :app:compileDebugShaders NO-SOURCE
-> Task :app:generateDebugAssets UP-TO-DATE
-> Task :connection:copyDebugJniLibsProjectOnly
+> Task :core:copyDebugJniLibsProjectOnly
 > Task :data:mergeDebugJniLibFolders FROM-CACHE
 > Task :data:mergeDebugNativeLibs NO-SOURCE
-> Task :core:copyDebugJniLibsProjectOnly
+> Task :connection:javaPreCompileDebug
 > Task :discovery:mergeDebugJniLibFolders FROM-CACHE
 > Task :discovery:mergeDebugNativeLibs NO-SOURCE
-> Task :app:processDebugMainManifest
-> Task :app:processDebugManifest
 > Task :discovery:copyDebugJniLibsProjectOnly
 > Task :domain:mergeDebugJniLibFolders FROM-CACHE
 > Task :domain:mergeDebugNativeLibs NO-SOURCE
 > Task :data:copyDebugJniLibsProjectOnly
 > Task :platform:mergeDebugJniLibFolders FROM-CACHE
 > Task :platform:mergeDebugNativeLibs NO-SOURCE
-> Task :domain:copyDebugJniLibsProjectOnly
+> Task :platform:javaPreCompileDebug
 > Task :transfer:mergeDebugJniLibFolders FROM-CACHE
 > Task :transfer:mergeDebugNativeLibs NO-SOURCE
-> Task :app:processDebugManifestForPackage
+> Task :platform:copyDebugJniLibsProjectOnly
 > Task :ui:mergeDebugJniLibFolders FROM-CACHE
 > Task :ui:mergeDebugNativeLibs NO-SOURCE
 > Task :transfer:copyDebugJniLibsProjectOnly
 > Task :ui:copyDebugJniLibsProjectOnly
 > Task :app:writeDebugAppMetadata
-> Task :platform:copyDebugJniLibsProjectOnly
+> Task :domain:copyDebugJniLibsProjectOnly
+> Task :app:processDebugMainManifest
 > Task :app:writeDebugSigningConfigVersions
 > Task :app:mergeDebugAssets FROM-CACHE
+> Task :app:processDebugManifest
 > Task :app:compressDebugAssets
-> Task :app:checkDebugAarMetadata
+> Task :app:processDebugManifestForPackage
 > Task :app:mergeDebugResources
 > Task :app:validateSigningDebug
 > Task :app:processDebugResources
@@ -223,41 +218,24 @@ Installing Android SDK Build-Tools 34 in /usr/local/share/android-sdk/build-tool
 w: file:///Users/builder/clone/core/src/main/kotlin/com/sendra/core/extensions/FlowExtensions.kt:11:28 Variable 'pendingValue' initializer is redundant
 w: file:///Users/builder/clone/core/src/main/kotlin/com/sendra/core/extensions/FlowExtensions.kt:12:27 Variable 'hasPendingValue' initializer is redundant
 
+> Task :app:mergeExtDexDebug
 > Task :core:compileDebugJavaWithJavac NO-SOURCE
-> Task :core:bundleLibCompileToJarDebug
 > Task :core:processDebugJavaRes
 > Task :core:bundleLibRuntimeToJarDebug
+> Task :core:bundleLibCompileToJarDebug
 > Task :core:bundleLibRuntimeToDirDebug
-> Task :app:mergeExtDexDebug
+> Task :domain:kspDebugKotlin
+> Task :domain:compileDebugKotlin
+> Task :domain:processDebugJavaRes
+> Task :domain:compileDebugJavaWithJavac
+> Task :domain:transformDebugClassesWithAsm
+> Task :domain:bundleLibCompileToJarDebug
+> Task :domain:bundleLibRuntimeToJarDebug
+> Task :domain:bundleLibRuntimeToDirDebug
 
-> Task :domain:compileDebugKotlin FAILED
-e: file:///Users/builder/clone/domain/src/main/kotlin/com/sendra/domain/usecase/discovery/StartDiscoveryUseCase.kt:6:14 Unresolved reference: inject
-e: file:///Users/builder/clone/domain/src/main/kotlin/com/sendra/domain/usecase/discovery/StartDiscoveryUseCase.kt:8:30 Unresolved reference: Inject
-
-0 problems were found storing the configuration cache.
-
-See the complete report at file:///Users/builder/clone/build/reports/configuration-cache/deslnsismfjzcqcqnkncowjty/7b3vo7tmdx1s9hv1dct6kvuji/configuration-cache-report.html
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':domain:compileDebugKotlin'.
-> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
-   > Compilation error. See log for more details
-
-* Try:
-> Run with --stacktrace option to get the stack trace.
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights.
-> Get more help at https://help.gradle.org.
-
-BUILD FAILED in 5m 51s
-143 actionable tasks: 88 executed, 55 from cache
-Configuration cache entry stored.
-
-
-Build failed :|
-Step 3 script `Build Debug APK` exited with status code 1
+> Task :data:kspDebugKotlin FAILED
+e: [ksp] [MissingType]: Element 'com.sendra.data.local.database.SendraDatabase' references a type that is not present
+e: Error occurred in KSP, check log for detail
 Downloading https://services.gradle.org/distributions/gradle-8.2-bin.zip
 ............10%............20%............30%.............40%............50%............60%............70%.............80%............90%............100%
 
@@ -281,121 +259,123 @@ Installing Android SDK Build-Tools 34 in /usr/local/share/android-sdk/build-tool
 "Install Android SDK Build-Tools 34 v.34.0.0" complete.
 "Install Android SDK Build-Tools 34 v.34.0.0" finished.
 > Task :connection:preBuild UP-TO-DATE
-> Task :data:preBuild UP-TO-DATE
-> Task :core:preBuild UP-TO-DATE
-> Task :discovery:preBuild UP-TO-DATE
+> Task :domain:preBuild UP-TO-DATE
 > Task :app:preBuild UP-TO-DATE
 > Task :platform:preBuild UP-TO-DATE
-> Task :domain:preBuild UP-TO-DATE
+> Task :discovery:preBuild UP-TO-DATE
+> Task :data:preBuild UP-TO-DATE
+> Task :core:preBuild UP-TO-DATE
 > Task :core:preDebugBuild UP-TO-DATE
-> Task :domain:preDebugBuild UP-TO-DATE
-> Task :data:preDebugBuild UP-TO-DATE
-> Task :discovery:preDebugBuild UP-TO-DATE
 > Task :connection:preDebugBuild UP-TO-DATE
+> Task :discovery:preDebugBuild UP-TO-DATE
 > Task :app:preDebugBuild UP-TO-DATE
-> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :data:preDebugBuild UP-TO-DATE
 > Task :platform:preDebugBuild UP-TO-DATE
+> Task :domain:preDebugBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
 > Task :transfer:preBuild UP-TO-DATE
 > Task :transfer:preDebugBuild UP-TO-DATE
 > Task :app:generateDebugBuildConfig
 > Task :ui:preBuild UP-TO-DATE
 > Task :ui:preDebugBuild UP-TO-DATE
+> Task :platform:writeDebugAarMetadata
 > Task :connection:writeDebugAarMetadata
+> Task :transfer:writeDebugAarMetadata
+> Task :data:writeDebugAarMetadata
+> Task :discovery:writeDebugAarMetadata
 > Task :core:writeDebugAarMetadata
 > Task :domain:writeDebugAarMetadata
 > Task :ui:writeDebugAarMetadata
-> Task :discovery:writeDebugAarMetadata
-> Task :platform:writeDebugAarMetadata
-> Task :transfer:writeDebugAarMetadata
-> Task :data:writeDebugAarMetadata
+> Task :core:generateDebugResValues
+> Task :core:generateDebugResources
+> Task :data:generateDebugResValues
+> Task :data:generateDebugResources
+> Task :connection:generateDebugResValues
 > Task :app:generateDebugResValues
-> Task :discovery:generateDebugResValues FROM-CACHE
-> Task :connection:generateDebugResValues FROM-CACHE
-> Task :domain:generateDebugResValues FROM-CACHE
+> Task :domain:generateDebugResValues
+> Task :platform:generateDebugResValues
+> Task :domain:generateDebugResources
+> Task :discovery:generateDebugResValues
+> Task :discovery:generateDebugResources
+> Task :connection:generateDebugResources
+> Task :platform:generateDebugResources
 > Task :transfer:generateDebugResValues FROM-CACHE
-> Task :data:generateDebugResValues FROM-CACHE
-> Task :platform:generateDebugResValues FROM-CACHE
-> Task :core:generateDebugResValues FROM-CACHE
-> Task :data:generateDebugResources UP-TO-DATE
-> Task :domain:generateDebugResources UP-TO-DATE
-> Task :connection:generateDebugResources UP-TO-DATE
-> Task :platform:generateDebugResources UP-TO-DATE
-> Task :discovery:generateDebugResources UP-TO-DATE
-> Task :core:generateDebugResources UP-TO-DATE
 > Task :transfer:generateDebugResources UP-TO-DATE
-> Task :discovery:packageDebugResources
 > Task :platform:packageDebugResources
-> Task :data:packageDebugResources
-> Task :transfer:packageDebugResources
-> Task :app:generateDebugResources
-> Task :connection:packageDebugResources
-> Task :domain:packageDebugResources
 > Task :core:packageDebugResources
+> Task :app:generateDebugResources
+> Task :transfer:packageDebugResources
+> Task :data:packageDebugResources
+> Task :domain:packageDebugResources
+> Task :connection:packageDebugResources
+> Task :discovery:packageDebugResources
 > Task :ui:generateDebugResValues FROM-CACHE
 > Task :ui:generateDebugResources UP-TO-DATE
-> Task :app:extractDeepLinksDebug
 > Task :connection:extractDeepLinksDebug
+> Task :app:extractDeepLinksDebug
 > Task :core:extractDeepLinksDebug
 > Task :data:extractDeepLinksDebug FROM-CACHE
-> Task :ui:packageDebugResources
 > Task :discovery:extractDeepLinksDebug FROM-CACHE
+> Task :ui:packageDebugResources
 > Task :app:createDebugCompatibleScreenManifests
-> Task :app:packageDebugResources
-> Task :data:processDebugManifest
-> Task :domain:extractDeepLinksDebug FROM-CACHE
-> Task :domain:processDebugManifest
-> Task :platform:extractDeepLinksDebug FROM-CACHE
-> Task :platform:processDebugManifest
-> Task :transfer:extractDeepLinksDebug FROM-CACHE
-> Task :transfer:processDebugManifest
-> Task :ui:extractDeepLinksDebug FROM-CACHE
-> Task :ui:processDebugManifest
 > Task :core:processDebugManifest
 > Task :connection:processDebugManifest
-> Task :discovery:processDebugManifest
-> Task :connection:parseDebugLocalResources
+> Task :domain:extractDeepLinksDebug FROM-CACHE
+> Task :platform:extractDeepLinksDebug FROM-CACHE
+> Task :app:packageDebugResources
+> Task :platform:processDebugManifest
+> Task :transfer:extractDeepLinksDebug FROM-CACHE
 > Task :app:parseDebugLocalResources
+> Task :ui:extractDeepLinksDebug FROM-CACHE
+> Task :transfer:processDebugManifest
+> Task :ui:processDebugManifest
+> Task :connection:parseDebugLocalResources
+> Task :data:processDebugManifest
+> Task :discovery:processDebugManifest
+> Task :domain:processDebugManifest
 > Task :core:parseDebugLocalResources FROM-CACHE
-> Task :core:compileDebugLibraryResources
-> Task :data:compileDebugLibraryResources FROM-CACHE
-> Task :data:parseDebugLocalResources FROM-CACHE
-> Task :core:generateDebugRFile
-> Task :discovery:compileDebugLibraryResources FROM-CACHE
-> Task :discovery:parseDebugLocalResources FROM-CACHE
 > Task :connection:generateDebugRFile
-> Task :domain:compileDebugLibraryResources FROM-CACHE
-> Task :discovery:generateDebugRFile
-> Task :domain:parseDebugLocalResources FROM-CACHE
-> Task :platform:compileDebugLibraryResources FROM-CACHE
+> Task :core:generateDebugRFile
+> Task :data:parseDebugLocalResources FROM-CACHE
 > Task :data:generateDebugRFile
+> Task :discovery:compileDebugLibraryResources
+> Task :discovery:parseDebugLocalResources FROM-CACHE
+> Task :discovery:generateDebugRFile
+> Task :domain:compileDebugLibraryResources FROM-CACHE
+> Task :domain:parseDebugLocalResources FROM-CACHE
+> Task :core:compileDebugLibraryResources
+> Task :platform:compileDebugLibraryResources FROM-CACHE
 > Task :platform:parseDebugLocalResources FROM-CACHE
-> Task :transfer:compileDebugLibraryResources FROM-CACHE
-> Task :transfer:parseDebugLocalResources FROM-CACHE
 > Task :connection:compileDebugLibraryResources
+> Task :transfer:compileDebugLibraryResources FROM-CACHE
+> Task :data:compileDebugLibraryResources
 > Task :domain:generateDebugRFile
+> Task :transfer:parseDebugLocalResources FROM-CACHE
+> Task :ui:parseDebugLocalResources FROM-CACHE
 > Task :ui:compileDebugLibraryResources FROM-CACHE
 > Task :connection:checkKotlinGradlePluginConfigurationErrors
 > Task :core:checkKotlinGradlePluginConfigurationErrors
-> Task :ui:parseDebugLocalResources FROM-CACHE
 > Task :platform:generateDebugRFile
 > Task :ui:generateDebugRFile
-> Task :core:javaPreCompileDebug
-> Task :domain:checkKotlinGradlePluginConfigurationErrors
 > Task :data:checkKotlinGradlePluginConfigurationErrors
-> Task :domain:javaPreCompileDebug FROM-CACHE
+> Task :domain:checkKotlinGradlePluginConfigurationErrors
 > Task :transfer:generateDebugRFile
+> Task :core:javaPreCompileDebug
+> Task :domain:javaPreCompileDebug
 > Task :discovery:checkKotlinGradlePluginConfigurationErrors
-> Task :connection:javaPreCompileDebug
+> Task :discovery:javaPreCompileDebug FROM-CACHE
 > Task :platform:checkKotlinGradlePluginConfigurationErrors
 > Task :transfer:checkKotlinGradlePluginConfigurationErrors
 > Task :transfer:javaPreCompileDebug FROM-CACHE
-> Task :discovery:javaPreCompileDebug
+> Task :data:javaPreCompileDebug
 > Task :ui:checkKotlinGradlePluginConfigurationErrors
 > Task :ui:javaPreCompileDebug FROM-CACHE
 > Task :app:javaPreCompileDebug
-> Task :platform:javaPreCompileDebug
-> Task :connection:mergeDebugShaders
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :connection:mergeDebugShaders FROM-CACHE
 > Task :connection:compileDebugShaders NO-SOURCE
 > Task :connection:generateDebugAssets UP-TO-DATE
 > Task :connection:packageDebugAssets FROM-CACHE
@@ -427,45 +407,43 @@ Installing Android SDK Build-Tools 34 in /usr/local/share/android-sdk/build-tool
 > Task :ui:compileDebugShaders NO-SOURCE
 > Task :ui:generateDebugAssets UP-TO-DATE
 > Task :ui:packageDebugAssets FROM-CACHE
-> Task :app:desugarDebugFileDependencies
 > Task :app:mapDebugSourceSetPaths
+> Task :app:desugarDebugFileDependencies
+> Task :app:checkDebugAarMetadata
 > Task :app:mergeDebugJniLibFolders FROM-CACHE
 > Task :connection:mergeDebugJniLibFolders FROM-CACHE
 > Task :connection:mergeDebugNativeLibs NO-SOURCE
-> Task :data:javaPreCompileDebug
+> Task :connection:copyDebugJniLibsProjectOnly
 > Task :core:mergeDebugJniLibFolders FROM-CACHE
 > Task :core:mergeDebugNativeLibs NO-SOURCE
-> Task :app:mergeDebugShaders
-> Task :app:compileDebugShaders NO-SOURCE
-> Task :app:generateDebugAssets UP-TO-DATE
-> Task :connection:copyDebugJniLibsProjectOnly
+> Task :core:copyDebugJniLibsProjectOnly
 > Task :data:mergeDebugJniLibFolders FROM-CACHE
 > Task :data:mergeDebugNativeLibs NO-SOURCE
-> Task :core:copyDebugJniLibsProjectOnly
+> Task :connection:javaPreCompileDebug
 > Task :discovery:mergeDebugJniLibFolders FROM-CACHE
 > Task :discovery:mergeDebugNativeLibs NO-SOURCE
-> Task :app:processDebugMainManifest
-> Task :app:processDebugManifest
 > Task :discovery:copyDebugJniLibsProjectOnly
 > Task :domain:mergeDebugJniLibFolders FROM-CACHE
 > Task :domain:mergeDebugNativeLibs NO-SOURCE
 > Task :data:copyDebugJniLibsProjectOnly
 > Task :platform:mergeDebugJniLibFolders FROM-CACHE
 > Task :platform:mergeDebugNativeLibs NO-SOURCE
-> Task :domain:copyDebugJniLibsProjectOnly
+> Task :platform:javaPreCompileDebug
 > Task :transfer:mergeDebugJniLibFolders FROM-CACHE
 > Task :transfer:mergeDebugNativeLibs NO-SOURCE
-> Task :app:processDebugManifestForPackage
+> Task :platform:copyDebugJniLibsProjectOnly
 > Task :ui:mergeDebugJniLibFolders FROM-CACHE
 > Task :ui:mergeDebugNativeLibs NO-SOURCE
 > Task :transfer:copyDebugJniLibsProjectOnly
 > Task :ui:copyDebugJniLibsProjectOnly
 > Task :app:writeDebugAppMetadata
-> Task :platform:copyDebugJniLibsProjectOnly
+> Task :domain:copyDebugJniLibsProjectOnly
+> Task :app:processDebugMainManifest
 > Task :app:writeDebugSigningConfigVersions
 > Task :app:mergeDebugAssets FROM-CACHE
+> Task :app:processDebugManifest
 > Task :app:compressDebugAssets
-> Task :app:checkDebugAarMetadata
+> Task :app:processDebugManifestForPackage
 > Task :app:mergeDebugResources
 > Task :app:validateSigningDebug
 > Task :app:processDebugResources
@@ -477,25 +455,33 @@ Installing Android SDK Build-Tools 34 in /usr/local/share/android-sdk/build-tool
 w: file:///Users/builder/clone/core/src/main/kotlin/com/sendra/core/extensions/FlowExtensions.kt:11:28 Variable 'pendingValue' initializer is redundant
 w: file:///Users/builder/clone/core/src/main/kotlin/com/sendra/core/extensions/FlowExtensions.kt:12:27 Variable 'hasPendingValue' initializer is redundant
 
+> Task :app:mergeExtDexDebug
 > Task :core:compileDebugJavaWithJavac NO-SOURCE
-> Task :core:bundleLibCompileToJarDebug
 > Task :core:processDebugJavaRes
 > Task :core:bundleLibRuntimeToJarDebug
+> Task :core:bundleLibCompileToJarDebug
 > Task :core:bundleLibRuntimeToDirDebug
-> Task :app:mergeExtDexDebug
+> Task :domain:kspDebugKotlin
+> Task :domain:compileDebugKotlin
+> Task :domain:processDebugJavaRes
+> Task :domain:compileDebugJavaWithJavac
+> Task :domain:transformDebugClassesWithAsm
+> Task :domain:bundleLibCompileToJarDebug
+> Task :domain:bundleLibRuntimeToJarDebug
+> Task :domain:bundleLibRuntimeToDirDebug
 
-> Task :domain:compileDebugKotlin FAILED
-e: file:///Users/builder/clone/domain/src/main/kotlin/com/sendra/domain/usecase/discovery/StartDiscoveryUseCase.kt:6:14 Unresolved reference: inject
-e: file:///Users/builder/clone/domain/src/main/kotlin/com/sendra/domain/usecase/discovery/StartDiscoveryUseCase.kt:8:30 Unresolved reference: Inject
+> Task :data:kspDebugKotlin FAILED
+e: [ksp] [MissingType]: Element 'com.sendra.data.local.database.SendraDatabase' references a type that is not present
+e: Error occurred in KSP, check log for detail
 
 0 problems were found storing the configuration cache.
 
-See the complete report at file:///Users/builder/clone/build/reports/configuration-cache/deslnsismfjzcqcqnkncowjty/7b3vo7tmdx1s9hv1dct6kvuji/configuration-cache-report.html
+See the complete report at file:///Users/builder/clone/build/reports/configuration-cache/5t3pcdwtjb6egut27q967uexq/5gq0zt4spg963skhszkksuuvk/configuration-cache-report.html
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-Execution failed for task ':domain:compileDebugKotlin'.
+Execution failed for task ':data:kspDebugKotlin'.
 > A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
    > Compilation error. See log for more details
 
@@ -505,8 +491,33 @@ Execution failed for task ':domain:compileDebugKotlin'.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
 
-BUILD FAILED in 5m 51s
-143 actionable tasks: 88 executed, 55 from cache
+BUILD FAILED in 6m 33s
+151 actionable tasks: 103 executed, 48 from cache
+Configuration cache entry stored.
+
+
+Build failed :|
+Step 3 script `Build Debug APK` exited with status code 1
+
+0 problems were found storing the configuration cache.
+
+See the complete report at file:///Users/builder/clone/build/reports/configuration-cache/5t3pcdwtjb6egut27q967uexq/5gq0zt4spg963skhszkksuuvk/configuration-cache-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':data:kspDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 6m 33s
+151 actionable tasks: 103 executed, 48 from cache
 Configuration cache entry stored.
 
 
