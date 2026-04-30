@@ -2,8 +2,8 @@ package com.sendra.ui.screens.history
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sendra.data.local.database.HistoryDao
-import com.sendra.data.local.database.TransferHistoryEntity
+import com.sendra.domain.repository.TransferRepository
+import com.sendra.ui.model.UiTransferHistory
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HistoryViewModel @Inject constructor(
-    private val historyDao: HistoryDao
+    private val transferRepository: TransferRepository
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HistoryUiState())
@@ -29,12 +29,28 @@ class HistoryViewModel @Inject constructor(
             _uiState.update { it.copy(isLoading = true) }
             
             try {
-                val history = historyDao.getRecentHistory(limit = 100)
-                _uiState.update { 
-                    it.copy(
-                        historyItems = history,
-                        isLoading = false
-                    ) 
+                // Collect from repository flow
+                transferRepository.getTransferHistory().collect { sessions ->
+                    val historyItems = sessions.map { session ->
+                        UiTransferHistory(
+                            id = session.id,
+                            sessionId = session.id,
+                            timestamp = session.createdAt,
+                            direction = session.direction.name,
+                            status = session.status.name,
+                            deviceId = session.targetDevice.id,
+                            deviceName = session.targetDevice.name,
+                            totalBytes = session.totalBytes,
+                            bytesTransferred = session.totalBytes, // Assume completed for history
+                            fileCount = session.files.size
+                        )
+                    }
+                    _uiState.update { 
+                        it.copy(
+                            historyItems = historyItems,
+                            isLoading = false
+                        ) 
+                    }
                 }
             } catch (e: Exception) {
                 _uiState.update { 
@@ -47,15 +63,14 @@ class HistoryViewModel @Inject constructor(
         }
     }
 
-    fun onItemClicked(item: TransferHistoryEntity) {
+    fun onItemClicked(item: UiTransferHistory) {
         // Could navigate to detail view or show details in a bottom sheet
-        // For now, just log or show a snackbar
     }
 
     fun deleteHistoryItem(id: String) {
         viewModelScope.launch {
             try {
-                // Update the list locally (individual delete would require DAO update)
+                transferRepository.deleteSession(id)
                 _uiState.update { currentState ->
                     currentState.copy(
                         historyItems = currentState.historyItems.filter { it.id != id }
@@ -70,8 +85,7 @@ class HistoryViewModel @Inject constructor(
     fun clearAllHistory() {
         viewModelScope.launch {
             try {
-                // Delete old history (older than now, which effectively clears all)
-                historyDao.deleteOldHistory(cutoff = System.currentTimeMillis())
+                transferRepository.clearOldHistory(olderThanMillis = System.currentTimeMillis())
                 _uiState.update { it.copy(historyItems = emptyList()) }
             } catch (e: Exception) {
                 _uiState.update { it.copy(errorMessage = e.message) }
@@ -89,7 +103,7 @@ class HistoryViewModel @Inject constructor(
 }
 
 data class HistoryUiState(
-    val historyItems: List<TransferHistoryEntity> = emptyList(),
+    val historyItems: List<UiTransferHistory> = emptyList(),
     val isLoading: Boolean = false,
     val errorMessage: String? = null
 )

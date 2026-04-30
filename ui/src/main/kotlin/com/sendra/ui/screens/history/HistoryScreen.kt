@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.sendra.data.local.database.TransferHistoryEntity
+import com.sendra.ui.model.UiTransferHistory
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -124,8 +124,8 @@ private fun EmptyHistoryState() {
 
 @Composable
 private fun HistoryList(
-    items: List<TransferHistoryEntity>,
-    onItemClick: (TransferHistoryEntity) -> Unit,
+    items: List<UiTransferHistory>,
+    onItemClick: (UiTransferHistory) -> Unit,
     onItemDelete: (String) -> Unit
 ) {
     LazyColumn(
@@ -177,7 +177,7 @@ private fun HistoryList(
 
 @Composable
 private fun HistoryItemCard(
-    item: TransferHistoryEntity,
+    item: UiTransferHistory,
     onClick: () -> Unit,
     onDelete: () -> Unit
 ) {
