@@ -4,8 +4,11 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sendra.core.dispatcher.DispatcherProvider
+import com.sendra.core.result.Result
 import com.sendra.domain.model.Device
 import com.sendra.domain.model.FileInfo
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 import com.sendra.domain.model.TransferSession
 import com.sendra.domain.usecase.discovery.DiscoveryManager
 import com.sendra.domain.usecase.discovery.StartDiscoveryUseCase
@@ -15,7 +18,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import timber.log.Timber
+import android.util.Log
 import javax.inject.Inject
 import kotlin.math.cos
 import kotlin.math.sin
@@ -30,7 +33,13 @@ class RadarViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
     
-    private val selectedFiles: List<FileInfo> = savedStateHandle["files"] ?: emptyList()
+    private val selectedFiles: List<FileInfo> = savedStateHandle.get<String>("files")?.let { json ->
+        try {
+            Json.decodeFromString<List<FileInfo>>(json)
+        } catch (e: Exception) {
+            emptyList()
+        }
+    } ?: emptyList()
     
     private val _uiState = MutableStateFlow(RadarUiState(
         selectedFiles = selectedFiles,
@@ -135,11 +144,15 @@ class RadarViewModel @Inject constructor(
                 targetDevice = device
             )
             
-            result.onSuccess { session ->
-                _events.emit(RadarEvent.NavigateToTransfer(session.id))
-            }.onError { error, message ->
-                _uiState.update { it.copy(isTransferring = false) }
-                _events.emit(RadarEvent.ShowError(message ?: "Transfer failed"))
+            when (result) {
+                is Result.Success -> {
+                    _events.emit(RadarEvent.NavigateToTransfer(result.data.id))
+                }
+                is Result.Error -> {
+                    _uiState.update { it.copy(isTransferring = false) }
+                    _events.emit(RadarEvent.ShowError(result.message ?: "Transfer failed"))
+                }
+                is Result.Loading -> { }
             }
         }
     }

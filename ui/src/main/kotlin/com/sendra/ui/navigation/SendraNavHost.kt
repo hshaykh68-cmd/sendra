@@ -7,6 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.sendra.domain.model.FileInfo
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import com.sendra.ui.screens.home.HomeScreen
 import com.sendra.ui.screens.radar.RadarScreen
 import com.sendra.ui.screens.transfer.TransferScreen
@@ -37,7 +39,8 @@ fun SendraNavHost(
             route = Screen.Radar.route,
             arguments = listOf(
                 navArgument("files") {
-                    type = NavType.ParcelableArrayType(FileInfo::class.java)
+                    type = NavType.StringType
+                    defaultValue = "[]"
                 }
             )
         ) { backStackEntry ->
@@ -82,8 +85,8 @@ sealed class Screen(val route: String) {
     object Home : Screen("home")
     object Radar : Screen("radar?files={files}") {
         fun createRoute(files: List<FileInfo>): String {
-            // In real implementation, serialize files to JSON or use custom NavType
-            return "radar"
+            val json = Json.encodeToString(files)
+            return "radar?files=$json"
         }
     }
     object Transfer : Screen("transfer/{sessionId}") {

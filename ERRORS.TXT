@@ -1,0 +1,634 @@
+Build Debug APK
+6m 19s
+
+
+
+Show command
+Calculating task graph as no configuration cache is available for tasks: :app:assembleDebug
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+Checking the license for package Android SDK Build-Tools 34 in /usr/local/share/android-sdk/licenses
+License for package Android SDK Build-Tools 34 accepted.
+Preparing "Install Android SDK Build-Tools 34 v.34.0.0".
+"Install Android SDK Build-Tools 34 v.34.0.0" ready.
+Installing Android SDK Build-Tools 34 in /usr/local/share/android-sdk/build-tools/34.0.0
+"Install Android SDK Build-Tools 34 v.34.0.0" complete.
+"Install Android SDK Build-Tools 34 v.34.0.0" finished.
+> Task :domain:preBuild UP-TO-DATE
+> Task :platform:preBuild UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :data:preBuild UP-TO-DATE
+> Task :core:preBuild UP-TO-DATE
+> Task :discovery:preBuild UP-TO-DATE
+> Task :connection:preBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :data:preDebugBuild UP-TO-DATE
+> Task :core:preDebugBuild UP-TO-DATE
+> Task :discovery:preDebugBuild UP-TO-DATE
+> Task :domain:preDebugBuild UP-TO-DATE
+> Task :connection:preDebugBuild UP-TO-DATE
+> Task :platform:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :transfer:preBuild UP-TO-DATE
+> Task :transfer:preDebugBuild UP-TO-DATE
+> Task :app:generateDebugBuildConfig
+> Task :ui:preBuild UP-TO-DATE
+> Task :ui:preDebugBuild UP-TO-DATE
+> Task :ui:writeDebugAarMetadata
+> Task :transfer:writeDebugAarMetadata
+> Task :discovery:writeDebugAarMetadata
+> Task :core:writeDebugAarMetadata
+> Task :connection:writeDebugAarMetadata
+> Task :domain:writeDebugAarMetadata
+> Task :platform:writeDebugAarMetadata
+> Task :data:writeDebugAarMetadata
+> Task :connection:generateDebugResValues
+> Task :connection:generateDebugResources
+> Task :core:generateDebugResValues
+> Task :core:generateDebugResources
+> Task :app:generateDebugResValues
+> Task :domain:generateDebugResValues FROM-CACHE
+> Task :data:generateDebugResValues
+> Task :domain:generateDebugResources UP-TO-DATE
+> Task :data:generateDebugResources
+> Task :platform:generateDebugResValues FROM-CACHE
+> Task :platform:generateDebugResources UP-TO-DATE
+> Task :discovery:generateDebugResValues
+> Task :discovery:generateDebugResources
+> Task :transfer:generateDebugResValues FROM-CACHE
+> Task :transfer:generateDebugResources UP-TO-DATE
+> Task :core:packageDebugResources
+> Task :platform:packageDebugResources
+> Task :app:generateDebugResources
+> Task :data:packageDebugResources
+> Task :transfer:packageDebugResources
+> Task :domain:packageDebugResources
+> Task :connection:packageDebugResources
+> Task :discovery:packageDebugResources
+> Task :ui:generateDebugResValues FROM-CACHE
+> Task :ui:generateDebugResources UP-TO-DATE
+> Task :connection:extractDeepLinksDebug
+> Task :core:extractDeepLinksDebug
+> Task :app:extractDeepLinksDebug
+> Task :data:extractDeepLinksDebug FROM-CACHE
+> Task :discovery:extractDeepLinksDebug FROM-CACHE
+> Task :app:createDebugCompatibleScreenManifests
+> Task :ui:packageDebugResources
+> Task :domain:extractDeepLinksDebug FROM-CACHE
+> Task :app:packageDebugResources
+> Task :data:processDebugManifest
+> Task :core:processDebugManifest
+> Task :platform:extractDeepLinksDebug FROM-CACHE
+> Task :discovery:processDebugManifest
+> Task :platform:processDebugManifest
+> Task :transfer:extractDeepLinksDebug FROM-CACHE
+> Task :connection:processDebugManifest
+> Task :domain:processDebugManifest
+> Task :ui:extractDeepLinksDebug FROM-CACHE
+> Task :transfer:processDebugManifest
+> Task :ui:processDebugManifest
+> Task :app:parseDebugLocalResources
+> Task :core:parseDebugLocalResources
+> Task :core:generateDebugRFile
+> Task :connection:parseDebugLocalResources
+> Task :connection:compileDebugLibraryResources
+> Task :data:parseDebugLocalResources FROM-CACHE
+> Task :connection:generateDebugRFile
+> Task :discovery:compileDebugLibraryResources FROM-CACHE
+> Task :discovery:parseDebugLocalResources FROM-CACHE
+> Task :core:compileDebugLibraryResources
+> Task :data:generateDebugRFile
+> Task :domain:compileDebugLibraryResources FROM-CACHE
+> Task :domain:parseDebugLocalResources FROM-CACHE
+> Task :platform:compileDebugLibraryResources FROM-CACHE
+> Task :platform:parseDebugLocalResources FROM-CACHE
+> Task :data:compileDebugLibraryResources
+> Task :discovery:generateDebugRFile
+> Task :transfer:compileDebugLibraryResources FROM-CACHE
+> Task :transfer:parseDebugLocalResources FROM-CACHE
+> Task :ui:compileDebugLibraryResources FROM-CACHE
+> Task :ui:parseDebugLocalResources FROM-CACHE
+> Task :domain:generateDebugRFile
+> Task :connection:checkKotlinGradlePluginConfigurationErrors
+> Task :core:checkKotlinGradlePluginConfigurationErrors
+> Task :transfer:generateDebugRFile
+> Task :platform:generateDebugRFile
+> Task :data:checkKotlinGradlePluginConfigurationErrors
+> Task :domain:checkKotlinGradlePluginConfigurationErrors
+> Task :core:javaPreCompileDebug
+> Task :ui:generateDebugRFile
+> Task :connection:javaPreCompileDebug
+> Task :discovery:checkKotlinGradlePluginConfigurationErrors
+> Task :discovery:javaPreCompileDebug FROM-CACHE
+> Task :platform:checkKotlinGradlePluginConfigurationErrors
+> Task :transfer:checkKotlinGradlePluginConfigurationErrors
+> Task :transfer:javaPreCompileDebug FROM-CACHE
+> Task :domain:javaPreCompileDebug
+> Task :ui:checkKotlinGradlePluginConfigurationErrors
+> Task :ui:javaPreCompileDebug FROM-CACHE
+> Task :app:mapDebugSourceSetPaths
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :connection:mergeDebugShaders FROM-CACHE
+> Task :connection:compileDebugShaders NO-SOURCE
+> Task :connection:generateDebugAssets UP-TO-DATE
+> Task :connection:packageDebugAssets FROM-CACHE
+> Task :app:checkDebugAarMetadata
+> Task :core:mergeDebugShaders FROM-CACHE
+> Task :data:mergeDebugShaders FROM-CACHE
+> Task :data:javaPreCompileDebug
+> Task :core:compileDebugShaders NO-SOURCE
+> Task :core:generateDebugAssets UP-TO-DATE
+> Task :data:compileDebugShaders NO-SOURCE
+> Task :data:generateDebugAssets UP-TO-DATE
+> Task :discovery:mergeDebugShaders FROM-CACHE
+> Task :core:packageDebugAssets FROM-CACHE
+> Task :discovery:compileDebugShaders NO-SOURCE
+> Task :discovery:generateDebugAssets UP-TO-DATE
+> Task :data:packageDebugAssets FROM-CACHE
+> Task :domain:mergeDebugShaders FROM-CACHE
+> Task :discovery:packageDebugAssets FROM-CACHE
+> Task :platform:mergeDebugShaders FROM-CACHE
+> Task :domain:compileDebugShaders NO-SOURCE
+> Task :domain:generateDebugAssets UP-TO-DATE
+> Task :platform:compileDebugShaders NO-SOURCE
+> Task :platform:generateDebugAssets UP-TO-DATE
+> Task :domain:packageDebugAssets FROM-CACHE
+> Task :transfer:mergeDebugShaders FROM-CACHE
+> Task :transfer:compileDebugShaders NO-SOURCE
+> Task :transfer:generateDebugAssets UP-TO-DATE
+> Task :platform:packageDebugAssets FROM-CACHE
+> Task :ui:mergeDebugShaders FROM-CACHE
+> Task :transfer:packageDebugAssets FROM-CACHE
+> Task :ui:compileDebugShaders NO-SOURCE
+> Task :ui:generateDebugAssets UP-TO-DATE
+> Task :app:desugarDebugFileDependencies
+> Task :ui:packageDebugAssets FROM-CACHE
+> Task :app:mergeDebugJniLibFolders FROM-CACHE
+> Task :connection:mergeDebugJniLibFolders FROM-CACHE
+> Task :connection:mergeDebugNativeLibs NO-SOURCE
+> Task :connection:copyDebugJniLibsProjectOnly
+> Task :core:mergeDebugJniLibFolders FROM-CACHE
+> Task :core:mergeDebugNativeLibs NO-SOURCE
+> Task :app:javaPreCompileDebug
+> Task :data:mergeDebugJniLibFolders FROM-CACHE
+> Task :data:mergeDebugNativeLibs NO-SOURCE
+> Task :data:copyDebugJniLibsProjectOnly
+> Task :discovery:mergeDebugJniLibFolders FROM-CACHE
+> Task :discovery:mergeDebugNativeLibs NO-SOURCE
+> Task :discovery:copyDebugJniLibsProjectOnly
+> Task :domain:mergeDebugJniLibFolders FROM-CACHE
+> Task :domain:mergeDebugNativeLibs NO-SOURCE
+> Task :platform:javaPreCompileDebug
+> Task :platform:mergeDebugJniLibFolders FROM-CACHE
+> Task :platform:mergeDebugNativeLibs NO-SOURCE
+> Task :app:mergeDebugAssets FROM-CACHE
+> Task :app:compressDebugAssets
+> Task :transfer:mergeDebugJniLibFolders FROM-CACHE
+> Task :transfer:mergeDebugNativeLibs NO-SOURCE
+> Task :platform:copyDebugJniLibsProjectOnly
+> Task :ui:mergeDebugJniLibFolders FROM-CACHE
+> Task :ui:mergeDebugNativeLibs NO-SOURCE
+> Task :transfer:copyDebugJniLibsProjectOnly
+> Task :ui:copyDebugJniLibsProjectOnly
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :domain:copyDebugJniLibsProjectOnly
+> Task :app:processDebugManifestForPackage
+> Task :core:copyDebugJniLibsProjectOnly
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:mergeDebugResources
+> Task :app:processDebugResources
+> Task :app:validateSigningDebug
+> Task :app:checkDebugDuplicateClasses
+> Task :core:compileDebugKotlin
+> Task :app:mergeExtDexDebug
+
+> Task :core:compileDebugKotlin
+w: file:///Users/builder/clone/core/src/main/kotlin/com/sendra/core/extensions/FlowExtensions.kt:11:28 Variable 'pendingValue' initializer is redundant
+w: file:///Users/builder/clone/core/src/main/kotlin/com/sendra/core/extensions/FlowExtensions.kt:12:27 Variable 'hasPendingValue' initializer is redundant
+
+> Task :core:compileDebugJavaWithJavac NO-SOURCE
+> Task :core:processDebugJavaRes
+> Task :core:bundleLibRuntimeToDirDebug
+> Task :core:bundleLibCompileToJarDebug
+> Task :core:bundleLibRuntimeToJarDebug
+> Task :domain:kspDebugKotlin
+> Task :domain:compileDebugKotlin
+> Task :domain:processDebugJavaRes
+> Task :domain:compileDebugJavaWithJavac
+> Task :domain:transformDebugClassesWithAsm
+> Task :domain:bundleLibRuntimeToJarDebug
+> Task :domain:bundleLibCompileToJarDebug
+> Task :domain:bundleLibRuntimeToDirDebug
+> Task :data:kspDebugKotlin
+> Task :data:compileDebugKotlin
+> Task :data:processDebugJavaRes
+> Task :data:compileDebugJavaWithJavac
+> Task :data:transformDebugClassesWithAsm
+> Task :data:bundleLibRuntimeToJarDebug
+> Task :data:bundleLibCompileToJarDebug
+> Task :data:bundleLibRuntimeToDirDebug
+> Task :discovery:kspDebugKotlin
+> Task :connection:kspDebugKotlin
+
+> Task :discovery:compileDebugKotlin
+w: file:///Users/builder/clone/discovery/src/main/kotlin/com/sendra/discovery/manager/DiscoveryManagerImpl.kt:166:29 'resolveService(NsdServiceInfo!, NsdManager.ResolveListener!): Unit' is deprecated. Deprecated in Java
+w: file:///Users/builder/clone/discovery/src/main/kotlin/com/sendra/discovery/manager/DiscoveryManagerImpl.kt:212:39 'getter for host: InetAddress!' is deprecated. Deprecated in Java
+
+> Task :discovery:processDebugJavaRes
+> Task :discovery:compileDebugJavaWithJavac
+> Task :discovery:transformDebugClassesWithAsm
+> Task :discovery:bundleLibCompileToJarDebug
+> Task :discovery:bundleLibRuntimeToJarDebug
+> Task :discovery:bundleLibRuntimeToDirDebug
+
+> Task :connection:compileDebugKotlin
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:5:25 'WifiConfiguration' is deprecated. Deprecated in Java
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:35:39 Parameter 'ssid' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:35:53 Parameter 'password' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:132:17 Variable 'dhcpInfo' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:132:41 'getter for dhcpInfo: DhcpInfo!' is deprecated. Deprecated in Java
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:133:17 Variable 'dhcpLeaseParser' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:144:41 'getter for dhcpInfo: DhcpInfo!' is deprecated. Deprecated in Java
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/WifiDirectController.kt:127:29 Variable 'networkInfo' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/WifiDirectController.kt:128:102 'NetworkInfo' is deprecated. Deprecated in Java
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/manager/ConnectionManagerImpl.kt:160:44 Parameter 'device' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/manager/ConnectionManagerImpl.kt:164:51 Parameter 'device' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/transport/LanTransport.kt:67:27 Unchecked cast: List<DataChannel> to List<LanTransport.LanDataChannel>
+
+> Task :connection:processDebugJavaRes
+> Task :connection:compileDebugJavaWithJavac
+> Task :connection:transformDebugClassesWithAsm
+> Task :connection:bundleLibCompileToJarDebug
+> Task :connection:bundleLibRuntimeToJarDebug
+> Task :connection:bundleLibRuntimeToDirDebug
+> Task :transfer:kspDebugKotlin
+> Task :transfer:compileDebugKotlin
+> Task :transfer:processDebugJavaRes
+> Task :transfer:compileDebugJavaWithJavac
+> Task :transfer:transformDebugClassesWithAsm
+> Task :transfer:bundleLibCompileToJarDebug
+> Task :transfer:bundleLibRuntimeToJarDebug
+> Task :transfer:bundleLibRuntimeToDirDebug
+> Task :ui:kspDebugKotlin
+
+> Task :ui:compileDebugKotlin FAILED
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/navigation/SendraNavHost.kt:40:56 Type mismatch: inferred type is FileInfo but Parcelable was expected
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/home/HomeScreen.kt:82:49 Unresolved reference: Nearby
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/home/HomeScreen.kt:140:42 Unresolved reference: Receive
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarScreen.kt:305:34 Unresolved reference: rememberRipple
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:18:8 Unresolved reference: timber
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:138:20 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
+public inline fun <T> Result<TypeVariable(T)>.onSuccess(action: (value: TypeVariable(T)) -> Unit): Result<TypeVariable(T)> defined in kotlin
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:138:32 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:140:25 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:140:32 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:142:25 Suspension functions can be called only within coroutine body
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/transfer/TransferScreen.kt:378:22 Unresolved reference: scale
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/transfer/TransferViewModel.kt:13:8 Unresolved reference: timber
+
+> Task :platform:kspDebugKotlin
+
+0 problems were found storing the configuration cache.
+
+See the complete report at file:///Users/builder/clone/build/reports/configuration-cache/1ybmq1z5vkld8gewoug5jq4q/9xpb6a1fa7sthk13cva0fjrqu/configuration-cache-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':ui:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 6m 18s
+185 actionable tasks: 135 executed, 50 from cache
+Configuration cache entry stored.
+
+
+Build failed :|
+Step 4 script `Build Debug APK` exited with status code 1
+Calculating task graph as no configuration cache is available for tasks: :app:assembleDebug
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+Checking the license for package Android SDK Build-Tools 34 in /usr/local/share/android-sdk/licenses
+License for package Android SDK Build-Tools 34 accepted.
+Preparing "Install Android SDK Build-Tools 34 v.34.0.0".
+"Install Android SDK Build-Tools 34 v.34.0.0" ready.
+Installing Android SDK Build-Tools 34 in /usr/local/share/android-sdk/build-tools/34.0.0
+"Install Android SDK Build-Tools 34 v.34.0.0" complete.
+"Install Android SDK Build-Tools 34 v.34.0.0" finished.
+> Task :domain:preBuild UP-TO-DATE
+> Task :platform:preBuild UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :data:preBuild UP-TO-DATE
+> Task :core:preBuild UP-TO-DATE
+> Task :discovery:preBuild UP-TO-DATE
+> Task :connection:preBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :data:preDebugBuild UP-TO-DATE
+> Task :core:preDebugBuild UP-TO-DATE
+> Task :discovery:preDebugBuild UP-TO-DATE
+> Task :domain:preDebugBuild UP-TO-DATE
+> Task :connection:preDebugBuild UP-TO-DATE
+> Task :platform:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :transfer:preBuild UP-TO-DATE
+> Task :transfer:preDebugBuild UP-TO-DATE
+> Task :app:generateDebugBuildConfig
+> Task :ui:preBuild UP-TO-DATE
+> Task :ui:preDebugBuild UP-TO-DATE
+> Task :ui:writeDebugAarMetadata
+> Task :transfer:writeDebugAarMetadata
+> Task :discovery:writeDebugAarMetadata
+> Task :core:writeDebugAarMetadata
+> Task :connection:writeDebugAarMetadata
+> Task :domain:writeDebugAarMetadata
+> Task :platform:writeDebugAarMetadata
+> Task :data:writeDebugAarMetadata
+> Task :connection:generateDebugResValues
+> Task :connection:generateDebugResources
+> Task :core:generateDebugResValues
+> Task :core:generateDebugResources
+> Task :app:generateDebugResValues
+> Task :domain:generateDebugResValues FROM-CACHE
+> Task :data:generateDebugResValues
+> Task :domain:generateDebugResources UP-TO-DATE
+> Task :data:generateDebugResources
+> Task :platform:generateDebugResValues FROM-CACHE
+> Task :platform:generateDebugResources UP-TO-DATE
+> Task :discovery:generateDebugResValues
+> Task :discovery:generateDebugResources
+> Task :transfer:generateDebugResValues FROM-CACHE
+> Task :transfer:generateDebugResources UP-TO-DATE
+> Task :core:packageDebugResources
+> Task :platform:packageDebugResources
+> Task :app:generateDebugResources
+> Task :data:packageDebugResources
+> Task :transfer:packageDebugResources
+> Task :domain:packageDebugResources
+> Task :connection:packageDebugResources
+> Task :discovery:packageDebugResources
+> Task :ui:generateDebugResValues FROM-CACHE
+> Task :ui:generateDebugResources UP-TO-DATE
+> Task :connection:extractDeepLinksDebug
+> Task :core:extractDeepLinksDebug
+> Task :app:extractDeepLinksDebug
+> Task :data:extractDeepLinksDebug FROM-CACHE
+> Task :discovery:extractDeepLinksDebug FROM-CACHE
+> Task :app:createDebugCompatibleScreenManifests
+> Task :ui:packageDebugResources
+> Task :domain:extractDeepLinksDebug FROM-CACHE
+> Task :app:packageDebugResources
+> Task :data:processDebugManifest
+> Task :core:processDebugManifest
+> Task :platform:extractDeepLinksDebug FROM-CACHE
+> Task :discovery:processDebugManifest
+> Task :platform:processDebugManifest
+> Task :transfer:extractDeepLinksDebug FROM-CACHE
+> Task :connection:processDebugManifest
+> Task :domain:processDebugManifest
+> Task :ui:extractDeepLinksDebug FROM-CACHE
+> Task :transfer:processDebugManifest
+> Task :ui:processDebugManifest
+> Task :app:parseDebugLocalResources
+> Task :core:parseDebugLocalResources
+> Task :core:generateDebugRFile
+> Task :connection:parseDebugLocalResources
+> Task :connection:compileDebugLibraryResources
+> Task :data:parseDebugLocalResources FROM-CACHE
+> Task :connection:generateDebugRFile
+> Task :discovery:compileDebugLibraryResources FROM-CACHE
+> Task :discovery:parseDebugLocalResources FROM-CACHE
+> Task :core:compileDebugLibraryResources
+> Task :data:generateDebugRFile
+> Task :domain:compileDebugLibraryResources FROM-CACHE
+> Task :domain:parseDebugLocalResources FROM-CACHE
+> Task :platform:compileDebugLibraryResources FROM-CACHE
+> Task :platform:parseDebugLocalResources FROM-CACHE
+> Task :data:compileDebugLibraryResources
+> Task :discovery:generateDebugRFile
+> Task :transfer:compileDebugLibraryResources FROM-CACHE
+> Task :transfer:parseDebugLocalResources FROM-CACHE
+> Task :ui:compileDebugLibraryResources FROM-CACHE
+> Task :ui:parseDebugLocalResources FROM-CACHE
+> Task :domain:generateDebugRFile
+> Task :connection:checkKotlinGradlePluginConfigurationErrors
+> Task :core:checkKotlinGradlePluginConfigurationErrors
+> Task :transfer:generateDebugRFile
+> Task :platform:generateDebugRFile
+> Task :data:checkKotlinGradlePluginConfigurationErrors
+> Task :domain:checkKotlinGradlePluginConfigurationErrors
+> Task :core:javaPreCompileDebug
+> Task :ui:generateDebugRFile
+> Task :connection:javaPreCompileDebug
+> Task :discovery:checkKotlinGradlePluginConfigurationErrors
+> Task :discovery:javaPreCompileDebug FROM-CACHE
+> Task :platform:checkKotlinGradlePluginConfigurationErrors
+> Task :transfer:checkKotlinGradlePluginConfigurationErrors
+> Task :transfer:javaPreCompileDebug FROM-CACHE
+> Task :domain:javaPreCompileDebug
+> Task :ui:checkKotlinGradlePluginConfigurationErrors
+> Task :ui:javaPreCompileDebug FROM-CACHE
+> Task :app:mapDebugSourceSetPaths
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :connection:mergeDebugShaders FROM-CACHE
+> Task :connection:compileDebugShaders NO-SOURCE
+> Task :connection:generateDebugAssets UP-TO-DATE
+> Task :connection:packageDebugAssets FROM-CACHE
+> Task :app:checkDebugAarMetadata
+> Task :core:mergeDebugShaders FROM-CACHE
+> Task :data:mergeDebugShaders FROM-CACHE
+> Task :data:javaPreCompileDebug
+> Task :core:compileDebugShaders NO-SOURCE
+> Task :core:generateDebugAssets UP-TO-DATE
+> Task :data:compileDebugShaders NO-SOURCE
+> Task :data:generateDebugAssets UP-TO-DATE
+> Task :discovery:mergeDebugShaders FROM-CACHE
+> Task :core:packageDebugAssets FROM-CACHE
+> Task :discovery:compileDebugShaders NO-SOURCE
+> Task :discovery:generateDebugAssets UP-TO-DATE
+> Task :data:packageDebugAssets FROM-CACHE
+> Task :domain:mergeDebugShaders FROM-CACHE
+> Task :discovery:packageDebugAssets FROM-CACHE
+> Task :platform:mergeDebugShaders FROM-CACHE
+> Task :domain:compileDebugShaders NO-SOURCE
+> Task :domain:generateDebugAssets UP-TO-DATE
+> Task :platform:compileDebugShaders NO-SOURCE
+> Task :platform:generateDebugAssets UP-TO-DATE
+> Task :domain:packageDebugAssets FROM-CACHE
+> Task :transfer:mergeDebugShaders FROM-CACHE
+> Task :transfer:compileDebugShaders NO-SOURCE
+> Task :transfer:generateDebugAssets UP-TO-DATE
+> Task :platform:packageDebugAssets FROM-CACHE
+> Task :ui:mergeDebugShaders FROM-CACHE
+> Task :transfer:packageDebugAssets FROM-CACHE
+> Task :ui:compileDebugShaders NO-SOURCE
+> Task :ui:generateDebugAssets UP-TO-DATE
+> Task :app:desugarDebugFileDependencies
+> Task :ui:packageDebugAssets FROM-CACHE
+> Task :app:mergeDebugJniLibFolders FROM-CACHE
+> Task :connection:mergeDebugJniLibFolders FROM-CACHE
+> Task :connection:mergeDebugNativeLibs NO-SOURCE
+> Task :connection:copyDebugJniLibsProjectOnly
+> Task :core:mergeDebugJniLibFolders FROM-CACHE
+> Task :core:mergeDebugNativeLibs NO-SOURCE
+> Task :app:javaPreCompileDebug
+> Task :data:mergeDebugJniLibFolders FROM-CACHE
+> Task :data:mergeDebugNativeLibs NO-SOURCE
+> Task :data:copyDebugJniLibsProjectOnly
+> Task :discovery:mergeDebugJniLibFolders FROM-CACHE
+> Task :discovery:mergeDebugNativeLibs NO-SOURCE
+> Task :discovery:copyDebugJniLibsProjectOnly
+> Task :domain:mergeDebugJniLibFolders FROM-CACHE
+> Task :domain:mergeDebugNativeLibs NO-SOURCE
+> Task :platform:javaPreCompileDebug
+> Task :platform:mergeDebugJniLibFolders FROM-CACHE
+> Task :platform:mergeDebugNativeLibs NO-SOURCE
+> Task :app:mergeDebugAssets FROM-CACHE
+> Task :app:compressDebugAssets
+> Task :transfer:mergeDebugJniLibFolders FROM-CACHE
+> Task :transfer:mergeDebugNativeLibs NO-SOURCE
+> Task :platform:copyDebugJniLibsProjectOnly
+> Task :ui:mergeDebugJniLibFolders FROM-CACHE
+> Task :ui:mergeDebugNativeLibs NO-SOURCE
+> Task :transfer:copyDebugJniLibsProjectOnly
+> Task :ui:copyDebugJniLibsProjectOnly
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :domain:copyDebugJniLibsProjectOnly
+> Task :app:processDebugManifestForPackage
+> Task :core:copyDebugJniLibsProjectOnly
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:mergeDebugResources
+> Task :app:processDebugResources
+> Task :app:validateSigningDebug
+> Task :app:checkDebugDuplicateClasses
+> Task :core:compileDebugKotlin
+> Task :app:mergeExtDexDebug
+
+> Task :core:compileDebugKotlin
+w: file:///Users/builder/clone/core/src/main/kotlin/com/sendra/core/extensions/FlowExtensions.kt:11:28 Variable 'pendingValue' initializer is redundant
+w: file:///Users/builder/clone/core/src/main/kotlin/com/sendra/core/extensions/FlowExtensions.kt:12:27 Variable 'hasPendingValue' initializer is redundant
+
+> Task :core:compileDebugJavaWithJavac NO-SOURCE
+> Task :core:processDebugJavaRes
+> Task :core:bundleLibRuntimeToDirDebug
+> Task :core:bundleLibCompileToJarDebug
+> Task :core:bundleLibRuntimeToJarDebug
+> Task :domain:kspDebugKotlin
+> Task :domain:compileDebugKotlin
+> Task :domain:processDebugJavaRes
+> Task :domain:compileDebugJavaWithJavac
+> Task :domain:transformDebugClassesWithAsm
+> Task :domain:bundleLibRuntimeToJarDebug
+> Task :domain:bundleLibCompileToJarDebug
+> Task :domain:bundleLibRuntimeToDirDebug
+> Task :data:kspDebugKotlin
+> Task :data:compileDebugKotlin
+> Task :data:processDebugJavaRes
+> Task :data:compileDebugJavaWithJavac
+> Task :data:transformDebugClassesWithAsm
+> Task :data:bundleLibRuntimeToJarDebug
+> Task :data:bundleLibCompileToJarDebug
+> Task :data:bundleLibRuntimeToDirDebug
+> Task :discovery:kspDebugKotlin
+> Task :connection:kspDebugKotlin
+
+> Task :discovery:compileDebugKotlin
+w: file:///Users/builder/clone/discovery/src/main/kotlin/com/sendra/discovery/manager/DiscoveryManagerImpl.kt:166:29 'resolveService(NsdServiceInfo!, NsdManager.ResolveListener!): Unit' is deprecated. Deprecated in Java
+w: file:///Users/builder/clone/discovery/src/main/kotlin/com/sendra/discovery/manager/DiscoveryManagerImpl.kt:212:39 'getter for host: InetAddress!' is deprecated. Deprecated in Java
+
+> Task :discovery:processDebugJavaRes
+> Task :discovery:compileDebugJavaWithJavac
+> Task :discovery:transformDebugClassesWithAsm
+> Task :discovery:bundleLibCompileToJarDebug
+> Task :discovery:bundleLibRuntimeToJarDebug
+> Task :discovery:bundleLibRuntimeToDirDebug
+
+> Task :connection:compileDebugKotlin
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:5:25 'WifiConfiguration' is deprecated. Deprecated in Java
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:35:39 Parameter 'ssid' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:35:53 Parameter 'password' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:132:17 Variable 'dhcpInfo' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:132:41 'getter for dhcpInfo: DhcpInfo!' is deprecated. Deprecated in Java
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:133:17 Variable 'dhcpLeaseParser' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/HotspotController.kt:144:41 'getter for dhcpInfo: DhcpInfo!' is deprecated. Deprecated in Java
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/WifiDirectController.kt:127:29 Variable 'networkInfo' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/controller/WifiDirectController.kt:128:102 'NetworkInfo' is deprecated. Deprecated in Java
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/manager/ConnectionManagerImpl.kt:160:44 Parameter 'device' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/manager/ConnectionManagerImpl.kt:164:51 Parameter 'device' is never used
+w: file:///Users/builder/clone/connection/src/main/kotlin/com/sendra/connection/transport/LanTransport.kt:67:27 Unchecked cast: List<DataChannel> to List<LanTransport.LanDataChannel>
+
+> Task :connection:processDebugJavaRes
+> Task :connection:compileDebugJavaWithJavac
+> Task :connection:transformDebugClassesWithAsm
+> Task :connection:bundleLibCompileToJarDebug
+> Task :connection:bundleLibRuntimeToJarDebug
+> Task :connection:bundleLibRuntimeToDirDebug
+> Task :transfer:kspDebugKotlin
+> Task :transfer:compileDebugKotlin
+> Task :transfer:processDebugJavaRes
+> Task :transfer:compileDebugJavaWithJavac
+> Task :transfer:transformDebugClassesWithAsm
+> Task :transfer:bundleLibCompileToJarDebug
+> Task :transfer:bundleLibRuntimeToJarDebug
+> Task :transfer:bundleLibRuntimeToDirDebug
+> Task :ui:kspDebugKotlin
+
+> Task :ui:compileDebugKotlin FAILED
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/navigation/SendraNavHost.kt:40:56 Type mismatch: inferred type is FileInfo but Parcelable was expected
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/home/HomeScreen.kt:82:49 Unresolved reference: Nearby
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/home/HomeScreen.kt:140:42 Unresolved reference: Receive
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarScreen.kt:305:34 Unresolved reference: rememberRipple
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:18:8 Unresolved reference: timber
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:138:20 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
+public inline fun <T> Result<TypeVariable(T)>.onSuccess(action: (value: TypeVariable(T)) -> Unit): Result<TypeVariable(T)> defined in kotlin
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:138:32 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:140:25 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:140:32 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/radar/RadarViewModel.kt:142:25 Suspension functions can be called only within coroutine body
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/transfer/TransferScreen.kt:378:22 Unresolved reference: scale
+e: file:///Users/builder/clone/ui/src/main/kotlin/com/sendra/ui/screens/transfer/TransferViewModel.kt:13:8 Unresolved reference: timber
+
+> Task :platform:kspDebugKotlin
+
+0 problems were found storing the configuration cache.
+
+See the complete report at file:///Users/builder/clone/build/reports/configuration-cache/1ybmq1z5vkld8gewoug5jq4q/9xpb6a1fa7sthk13cva0fjrqu/configuration-cache-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':ui:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 6m 18s
+185 actionable tasks: 135 executed, 50 from cache
+Configuration cache entry stored.
+
+
+Build failed :|
+Step 4 script `Build Debug APK` exited with status code 1

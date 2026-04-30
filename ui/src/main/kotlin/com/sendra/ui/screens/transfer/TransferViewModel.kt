@@ -10,7 +10,7 @@ import com.sendra.transfer.manager.TransferManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import timber.log.Timber
+import android.util.Log
 import javax.inject.Inject
 
 @HiltViewModel

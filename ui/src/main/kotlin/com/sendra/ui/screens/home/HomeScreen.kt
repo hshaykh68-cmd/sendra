@@ -79,7 +79,7 @@ fun HomeScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
-                    imageVector = Icons.Default.Nearby,
+                    imageVector = Icons.Default.WifiTethering,
                     contentDescription = "Sendra",
                     modifier = Modifier.size(64.dp),
                     tint = MaterialTheme.colorScheme.primary
@@ -137,7 +137,7 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 HomeActionButton(
-                    icon = Icons.Default.Receive,
+                    icon = Icons.Default.Download,
                     label = "Receive",
                     onClick = { /* Enable receive mode */ }
                 )

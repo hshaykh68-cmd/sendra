@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
+import androidx.compose.material3.ripple
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -302,7 +303,7 @@ private fun DeviceNodeView(
                 .alpha(alpha)
                 .clickable(
                     onClick = onClick,
-                    indication = rememberRipple(bounded = false, radius = 32.dp),
+                    indication = ripple(bounded = false, radius = 32.dp),
                     interactionSource = remember { MutableInteractionSource() }
                 ),
             contentAlignment = Alignment.Center

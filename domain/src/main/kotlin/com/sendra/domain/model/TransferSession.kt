@@ -1,5 +1,8 @@
 package com.sendra.domain.model
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class TransferSession(
     val id: SessionId,
     val direction: TransferDirection,
@@ -37,6 +40,7 @@ enum class TransferStatus {
     INTERRUPTED
 }
 
+@Serializable
 data class FileInfo(
     val id: FileId,
     val name: String,
