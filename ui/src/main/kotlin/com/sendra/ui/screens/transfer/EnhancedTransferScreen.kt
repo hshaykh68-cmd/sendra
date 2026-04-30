@@ -4,6 +4,8 @@ import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.offset
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -382,24 +384,34 @@ private fun ShimmerProgressOverlay() {
         label = "shimmer"
     )
     
-    val tx = translateX
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .height(12.dp)
             .clip(RoundedCornerShape(6.dp))
-            .background(
-                brush = Brush.horizontalGradient(
-                    colors = listOf(
-                        Color.Transparent,
-                        Color.White.copy(alpha = 0.3f),
-                        Color.Transparent
-                    ),
-                    startX = { width -> width * tx },
-                    endX = { width -> width * tx + width * 0.5f }
+            .background(Color.Transparent)
+    ) {
+        val offsetX by animateFloatAsState(
+            targetValue = translateX,
+            animationSpec = tween(16),
+            label = "shimmerOffset"
+        )
+        Box(
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(0.5f)
+                .offset(x = with(LocalDensity.current) { (offsetX * 100).dp })
+                .background(
+                    brush = Brush.horizontalGradient(
+                        colors = listOf(
+                            Color.Transparent,
+                            Color.White.copy(alpha = 0.3f),
+                            Color.Transparent
+                        )
+                    )
                 )
-            )
-    )
+        )
+    }
 }
 
 @Composable
