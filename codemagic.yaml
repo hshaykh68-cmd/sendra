@@ -9,6 +9,10 @@ workflows:
           mkdir -p gradle/wrapper
           curl -L -o gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradle/wrapper/gradle-wrapper.jar
           chmod +x gradlew
+      - name: Clean Build Cache
+        script: |
+          cd $CM_BUILD_DIR
+          ./gradlew clean
       - name: Build Debug APK
         script: |
           cd $CM_BUILD_DIR
