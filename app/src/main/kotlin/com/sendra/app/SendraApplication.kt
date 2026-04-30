@@ -8,7 +8,7 @@ import android.os.Build
 import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
 import dagger.hilt.android.HiltAndroidApp
-import timber.log.Timber
+import android.util.Log
 import javax.inject.Inject
 
 @HiltAndroidApp
@@ -20,9 +20,9 @@ class SendraApplication : Application(), Configuration.Provider {
     override fun onCreate() {
         super.onCreate()
         
-        // Initialize Timber for logging
+        // Initialize logging
         if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
+            Log.d("SendraApplication", "Debug mode enabled")
         }
         
         // Create notification channel for foreground service
@@ -54,12 +54,11 @@ class SendraApplication : Application(), Configuration.Provider {
         }
     }
     
-    override fun getWorkManagerConfiguration(): Configuration {
-        return Configuration.Builder()
+    override val workManagerConfiguration: Configuration
+        get() = Configuration.Builder()
             .setWorkerFactory(workerFactory)
             .setMinimumLoggingLevel(android.util.Log.INFO)
             .build()
-    }
     
     companion object {
         const val CHANNEL_TRANSFER = "sendra_transfer"
