@@ -24,11 +24,13 @@ data class TransferSession(
 typealias SessionId = String
 typealias ChunkId = String
 
+@Serializable
 enum class TransferDirection {
     SEND,
     RECEIVE
 }
 
+@Serializable
 enum class TransferStatus {
     PREPARING,
     IN_PROGRESS,
@@ -77,6 +79,7 @@ data class FileChunk(
     override fun hashCode(): Int = id.hashCode()
 }
 
+@Serializable
 enum class ChunkStatus {
     PENDING,
     IN_FLIGHT,

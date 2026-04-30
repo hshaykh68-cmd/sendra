@@ -1,5 +1,8 @@
 package com.sendra.domain.model
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Device(
     val id: DeviceId,
     val name: String,
@@ -16,6 +19,7 @@ data class Device(
 
 typealias DeviceId = String
 
+@Serializable
 enum class DeviceType {
     PHONE,
     TABLET,
@@ -24,6 +28,7 @@ enum class DeviceType {
     UNKNOWN
 }
 
+@Serializable
 data class DeviceCapabilities(
     val canSend: Boolean = true,
     val canReceive: Boolean = true,
@@ -32,12 +37,14 @@ data class DeviceCapabilities(
     val protocolVersion: Int = 1
 )
 
+@Serializable
 data class ConnectionInfo(
     val ipAddress: String,
     val port: Int,
     val connectionMethod: ConnectionMethod
 )
 
+@Serializable
 enum class ConnectionMethod {
     LAN,
     WIFI_DIRECT,
@@ -46,12 +53,14 @@ enum class ConnectionMethod {
     UNKNOWN
 }
 
+@Serializable
 enum class TrustStatus {
     UNKNOWN,
     TRUSTED,
     BLOCKED
 }
 
+@Serializable
 data class SignalStrength(
     val rssi: Int, // dBm, e.g., -50
     val level: Int // 0-4 normalized
@@ -65,6 +74,7 @@ data class SignalStrength(
     }
 }
 
+@Serializable
 enum class Proximity {
     IMMEDIATE, // <1m
     NEAR,      // 1-3m
