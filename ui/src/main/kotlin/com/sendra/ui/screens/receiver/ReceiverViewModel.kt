@@ -3,8 +3,8 @@ package com.sendra.ui.screens.receiver
 import android.os.Build
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sendra.domain.usecase.discovery.DiscoveryManager
-import com.sendra.domain.usecase.transfer.TransferManager
+import com.sendra.domain.usecase.discovery.StartDiscoveryUseCase
+import com.sendra.domain.usecase.discovery.StopDiscoveryUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -15,8 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ReceiverViewModel @Inject constructor(
-    private val discoveryManager: DiscoveryManager,
-    private val transferManager: TransferManager
+    private val startDiscoveryUseCase: StartDiscoveryUseCase,
+    private val stopDiscoveryUseCase: StopDiscoveryUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(ReceiverUiState())
@@ -34,7 +34,7 @@ class ReceiverViewModel @Inject constructor(
     fun startListening() {
         viewModelScope.launch {
             _uiState.update { it.copy(isListening = true) }
-            discoveryManager.startDiscovery()
+            startDiscoveryUseCase()
             
             // TODO: Start server socket to listen for incoming connections
             // This would integrate with TransferManager to receive files
@@ -52,7 +52,7 @@ class ReceiverViewModel @Inject constructor(
     private fun stopListening() {
         viewModelScope.launch {
             _uiState.update { it.copy(isListening = false) }
-            discoveryManager.stopDiscovery()
+            stopDiscoveryUseCase()
         }
     }
 

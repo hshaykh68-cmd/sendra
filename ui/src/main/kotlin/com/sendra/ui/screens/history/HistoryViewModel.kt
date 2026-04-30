@@ -2,7 +2,7 @@ package com.sendra.ui.screens.history
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sendra.data.local.database.TransferDao
+import com.sendra.data.local.database.HistoryDao
 import com.sendra.data.local.database.TransferHistoryEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HistoryViewModel @Inject constructor(
-    private val transferDao: TransferDao
+    private val historyDao: HistoryDao
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HistoryUiState())
@@ -29,7 +29,7 @@ class HistoryViewModel @Inject constructor(
             _uiState.update { it.copy(isLoading = true) }
             
             try {
-                val history = transferDao.getRecentHistory(limit = 100)
+                val history = historyDao.getRecentHistory(limit = 100)
                 _uiState.update { 
                     it.copy(
                         historyItems = history,
@@ -55,8 +55,7 @@ class HistoryViewModel @Inject constructor(
     fun deleteHistoryItem(id: String) {
         viewModelScope.launch {
             try {
-                // Note: TransferDao doesn't have delete by ID, we might need to add it
-                // For now, we can update the list locally
+                // Update the list locally (individual delete would require DAO update)
                 _uiState.update { currentState ->
                     currentState.copy(
                         historyItems = currentState.historyItems.filter { it.id != id }
@@ -72,7 +71,7 @@ class HistoryViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 // Delete old history (older than now, which effectively clears all)
-                transferDao.deleteOldHistory(cutoff = System.currentTimeMillis())
+                historyDao.deleteOldHistory(cutoff = System.currentTimeMillis())
                 _uiState.update { it.copy(historyItems = emptyList()) }
             } catch (e: Exception) {
                 _uiState.update { it.copy(errorMessage = e.message) }
