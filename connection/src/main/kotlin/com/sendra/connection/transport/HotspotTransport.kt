@@ -35,11 +35,14 @@ class HotspotTransport(
     override suspend fun connect(endpoint: Endpoint): Result<Unit> {
         if (asSender) {
             // Start hotspot
-            val result = hotspotController.startHotspot()
-            return result.map { hotspotInfo ->
-                // Use hotspotInfo.ipAddress as our server address
-                isConnected = true
-                _connectionState.value = TransportConnectionState.CONNECTED
+            val startResult = hotspotController.startHotspot()
+            return when (startResult) {
+                is Result.Success -> {
+                    isConnected = true
+                    _connectionState.value = TransportConnectionState.CONNECTED
+                    Result.Success(Unit)
+                }
+                is Result.Error -> Result.Error(startResult.exception, startResult.message)
             }
         } else {
             // Connect to existing hotspot

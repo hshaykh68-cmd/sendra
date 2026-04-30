@@ -15,16 +15,14 @@ class DeviceCache @Inject constructor() {
     
     private val _devices = MutableStateFlow<List<Device>>(emptyList())
     val devices: StateFlow<List<Device>> = _devices.asStateFlow()
-    
+
     private val deviceMap = ConcurrentHashMap<DeviceId, CachedDevice>()
-    
+
     data class CachedDevice(
         val device: Device,
         val lastUpdateTime: Long = System.currentTimeMillis()
     )
-    
-    fun getDevices(): StateFlow<List<Device>> = devices
-    
+
     fun addOrUpdateDevice(device: Device) {
         val existing = deviceMap[device.id]
         

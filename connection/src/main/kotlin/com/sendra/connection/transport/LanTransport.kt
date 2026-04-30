@@ -6,9 +6,12 @@ import com.sendra.core.result.Result
 import com.sendra.domain.model.ChunkId
 import com.sendra.domain.model.FileChunk
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.sync.Semaphore
 import timber.log.Timber
 import java.io.*

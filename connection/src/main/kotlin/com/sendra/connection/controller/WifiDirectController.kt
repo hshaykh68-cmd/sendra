@@ -24,7 +24,7 @@ class WifiDirectController @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
     private val wifiP2pManager: WifiP2pManager? = context.getSystemService(Context.WIFI_P2P_SERVICE) as? WifiP2pManager
-    private val channel: WifiP2pManager.Channel? = wifiP2pManager?.initialize(
+    private val wifiP2pChannel: WifiP2pManager.Channel? = wifiP2pManager?.initialize(
         context,
         Looper.getMainLooper(),
         null
@@ -34,15 +34,15 @@ class WifiDirectController @Inject constructor(
     private var groupInfo: WifiP2pGroup? = null
     
     suspend fun createGroup(): Result<Unit> {
-        if (wifiP2pManager == null || channel == null) {
+        if (wifiP2pManager == null || wifiP2pChannel == null) {
             return Result.failure(IllegalStateException("WiFi Direct not available"))
         }
-        
+
         val deferred = CompletableDeferred<Result<Unit>>()
-        
+
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                wifiP2pManager.createGroup(channel, object : WifiP2pManager.ActionListener {
+                wifiP2pManager.createGroup(wifiP2pChannel, object : WifiP2pManager.ActionListener {
                     override fun onSuccess() {
                         isGroupOwner = true
                         deferred.complete(Result.success(Unit))
@@ -54,7 +54,7 @@ class WifiDirectController @Inject constructor(
                 })
             } else {
                 @Suppress("DEPRECATION")
-                wifiP2pManager.createGroup(channel, object : WifiP2pManager.ActionListener {
+                wifiP2pManager.createGroup(wifiP2pChannel, object : WifiP2pManager.ActionListener {
                     override fun onSuccess() {
                         isGroupOwner = true
                         deferred.complete(Result.success(Unit))
@@ -73,17 +73,17 @@ class WifiDirectController @Inject constructor(
     }
     
     suspend fun connectToDevice(deviceAddress: String): Result<Unit> {
-        if (wifiP2pManager == null || channel == null) {
+        if (wifiP2pManager == null || wifiP2pChannel == null) {
             return Result.failure(IllegalStateException("WiFi Direct not available"))
         }
-        
+
         val deferred = CompletableDeferred<Result<Unit>>()
-        
+
         val config = WifiP2pConfig.Builder()
             .setDeviceAddress(android.net.MacAddress.fromString(deviceAddress))
             .build()
-        
-        wifiP2pManager.connect(channel, config, object : WifiP2pManager.ActionListener {
+
+        wifiP2pManager.connect(wifiP2pChannel, config, object : WifiP2pManager.ActionListener {
             override fun onSuccess() {
                 deferred.complete(Result.success(Unit))
             }
@@ -97,12 +97,12 @@ class WifiDirectController @Inject constructor(
     }
     
     fun disconnect(): Result<Unit> {
-        if (wifiP2pManager == null || channel == null) {
+        if (wifiP2pManager == null || wifiP2pChannel == null) {
             return Result.failure(IllegalStateException("WiFi Direct not available"))
         }
-        
+
         try {
-            wifiP2pManager.removeGroup(channel, object : WifiP2pManager.ActionListener {
+            wifiP2pManager.removeGroup(wifiP2pChannel, object : WifiP2pManager.ActionListener {
                 override fun onSuccess() {
                     isGroupOwner = false
                     groupInfo = null
@@ -131,7 +131,7 @@ class WifiDirectController @Inject constructor(
                             intent.getParcelableExtra(WifiP2pManager.EXTRA_NETWORK_INFO)
                         }
                         
-                        wifiP2pManager?.requestConnectionInfo(channel) { info ->
+                        wifiP2pManager?.requestConnectionInfo(wifiP2pChannel) { info ->
                             isGroupOwner = info.isGroupOwner
                             
                             if (info.groupFormed) {
