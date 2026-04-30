@@ -184,7 +184,7 @@ class TransferManagerImpl @Inject constructor(
                     session = session,
                     transport = transport,
                     chunkMap = chunkMap,
-                    job = this
+                    job = coroutineContext.job
                 )
                 
                 activeSessions[session.id] = activeSession
@@ -228,7 +228,7 @@ class TransferManagerImpl @Inject constructor(
     private suspend fun processStream(streamIndex: Int, session: ActiveSession) {
         val dataChannel = session.transport.dataChannels[streamIndex]
         
-        while (isActive && !session.isPaused && !session.isCancelled) {
+        while (coroutineContext.isActive && !session.isPaused && !session.isCancelled) {
             val nextChunk = session.chunkMap.getNextPendingChunk() ?: break
             
             try {
@@ -237,10 +237,10 @@ class TransferManagerImpl @Inject constructor(
                 
                 // Read file data
                 val file = session.session.files[nextChunk.fileIndex]
-                val chunkData = fileRepository.readChunk(
-                    file = file,
+                val chunkData = fileRepository.readFileChunk(
+                    fileUri = file.uri,
                     offset = nextChunk.offset,
-                    size = nextChunk.size
+                    length = nextChunk.size
                 )
                 
                 if (chunkData == null) {
@@ -302,7 +302,7 @@ class TransferManagerImpl @Inject constructor(
         var lastBytes = 0L
         var lastTime = System.currentTimeMillis()
         
-        while (isActive) {
+        while (coroutineContext.isActive) {
             delay(SendraConstants.PROGRESS_UPDATE_INTERVAL_MS)
             
             val currentBytes = session.bytesTransferred.get()
