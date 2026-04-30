@@ -4,9 +4,11 @@ import com.sendra.connection.manager.ConnectionManager
 import com.sendra.connection.manager.ConnectionManagerImpl
 import com.sendra.data.repository.DeviceRepositoryImpl
 import com.sendra.data.repository.FileRepositoryImpl
+import com.sendra.data.repository.TransferRepositoryImpl
 import com.sendra.discovery.manager.DiscoveryManagerImpl
 import com.sendra.domain.repository.DeviceRepository
 import com.sendra.domain.repository.FileRepository
+import com.sendra.domain.repository.TransferRepository
 import com.sendra.domain.usecase.discovery.DiscoveryManager
 import com.sendra.transfer.manager.TransferManager
 import com.sendra.transfer.manager.TransferManagerImpl
@@ -49,4 +51,10 @@ abstract class ManagerModule {
     abstract fun bindFileRepository(
         impl: FileRepositoryImpl
     ): FileRepository
+    
+    @Binds
+    @Singleton
+    abstract fun bindTransferRepository(
+        impl: TransferRepositoryImpl
+    ): TransferRepository
 }
