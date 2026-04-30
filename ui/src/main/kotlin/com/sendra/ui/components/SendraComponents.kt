@@ -163,7 +163,7 @@ fun SendraCard(
             containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-        onClick = onClick
+        onClick = onClick ?: {}
     ) {
         content()
     }
@@ -409,7 +409,7 @@ fun SendraListItem(
             containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-        onClick = onClick
+        onClick = onClick ?: {}
     ) {
         Row(
             modifier = Modifier

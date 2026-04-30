@@ -358,8 +358,8 @@ private fun DottedRing(
             Box(
                 modifier = Modifier
                     .offset(
-                        x = with(density) { x.toDp() },
-                        y = with(density) { y.toDp() }
+                        x = with(density) { x.toFloat().toDp() },
+                        y = with(density) { y.toFloat().toDp() }
                     )
                     .size(dotSize)
                     .background(
@@ -413,8 +413,8 @@ private fun SparkleEffects() {
             modifier = Modifier
                 .fillMaxSize()
                 .graphicsLayer {
-                    translationX = x
-                    translationY = y
+                    translationX = x.toFloat()
+                    translationY = y.toFloat()
                     scaleX = scale
                     scaleY = scale
                 },
