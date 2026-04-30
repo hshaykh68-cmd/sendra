@@ -6,6 +6,7 @@ import com.sendra.core.result.Result
 import com.sendra.domain.model.ChunkId
 import com.sendra.domain.model.FileChunk
 import kotlinx.coroutines.*
+import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -122,8 +123,8 @@ class LanTransport(
         override fun receive(): Flow<ControlEvent> = kotlinx.coroutines.flow.flow {
             val input = socket?.getInputStream() ?: return@flow
             val reader = BufferedReader(InputStreamReader(input))
-            
-            while (isActive && isConnected) {
+
+            while (currentCoroutineContext().isActive && isConnected) {
                 try {
                     val line = reader.readLine() ?: break
                     val event = deserializeEvent(line)

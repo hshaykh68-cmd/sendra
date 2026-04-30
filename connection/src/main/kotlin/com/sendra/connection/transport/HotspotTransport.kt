@@ -34,15 +34,17 @@ class HotspotTransport(
     
     override suspend fun connect(endpoint: Endpoint): Result<Unit> {
         if (asSender) {
-            // Start hotspot
+            // Start hotspot - HotspotController returns kotlin.Result
             val startResult = hotspotController.startHotspot()
-            return when (startResult) {
-                is Result.Success -> {
-                    isConnected = true
-                    _connectionState.value = TransportConnectionState.CONNECTED
-                    Result.Success(Unit)
-                }
-                is Result.Error -> Result.Error(startResult.exception, startResult.message)
+            return if (startResult.isSuccess) {
+                isConnected = true
+                _connectionState.value = TransportConnectionState.CONNECTED
+                Result.Success(Unit)
+            } else {
+                Result.Error(
+                    startResult.exceptionOrNull() ?: IllegalStateException("Failed to start hotspot"),
+                    "Failed to start hotspot"
+                )
             }
         } else {
             // Connect to existing hotspot

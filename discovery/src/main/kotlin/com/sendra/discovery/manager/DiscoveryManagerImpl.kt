@@ -36,7 +36,7 @@ class DiscoveryManagerImpl @Inject constructor(
         extraBufferCapacity = 64,
         replay = 1
     )
-    override fun getDiscoveredDevices(): Flow<List<Device>> = deviceCache.getDevices()
+    override fun getDiscoveredDevices(): Flow<List<Device>> = deviceCache.devices
     
     private var discoveryJob: Job? = null
     private var isActive = false
