@@ -56,7 +56,11 @@ class TransferForegroundService : Service() {
                 }
             }
             ACTION_PAUSE -> {
-                sessionId?.let { transferManager.pauseTransfer(it) }
+                sessionId?.let {
+                    serviceScope.launch {
+                        transferManager.pauseTransfer(it)
+                    }
+                }
             }
             ACTION_RESUME -> {
                 sessionId?.let { 
