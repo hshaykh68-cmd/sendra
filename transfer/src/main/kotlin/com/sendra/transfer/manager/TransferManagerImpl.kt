@@ -169,61 +169,60 @@ class TransferManagerImpl @Inject constructor(
         transport: Transport,
         resume: Boolean = false
     ) {
-        val job = CoroutineScope(dispatcherProvider.io).launch {
+        CoroutineScope(dispatcherProvider.io).launch {
+            transferRepository.updateSessionStatus(session.id, TransferStatus.IN_PROGRESS)
+            
+            // Load or create chunk map
+            val chunkMap = if (resume) {
+                resumeStateManager.loadChunkState(session.id)
+                    ?: createChunkMap(session.files)
+            } else {
+                createChunkMap(session.files)
+            }
+            
+            val activeSession = ActiveSession(
+                session = session,
+                transport = transport,
+                chunkMap = chunkMap,
+                job = coroutineContext.job
+            )
+            
+            activeSessions[session.id] = activeSession
+            
             try {
-                transferRepository.updateSessionStatus(session.id, TransferStatus.IN_PROGRESS)
-                
-                // Load or create chunk map
-                val chunkMap = if (resume) {
-                    resumeStateManager.loadChunkState(session.id)
-                        ?: createChunkMap(session.files)
-                } else {
-                    createChunkMap(session.files)
+                // Start parallel stream processing
+                val streamJobs = (0 until SendraConstants.PARALLEL_STREAMS).map { streamIndex ->
+                    launch {
+                        processStream(streamIndex, activeSession)
+                    }
                 }
                 
-                val activeSession = ActiveSession(
-                    session = session,
-                    transport = transport,
-                    chunkMap = chunkMap,
-                    job = coroutineContext.job
-                )
-                
-                activeSessions[session.id] = activeSession
-                
-                try {
-                    // Start parallel stream processing
-                    val streamJobs = (0 until SendraConstants.PARALLEL_STREAMS).map { streamIndex ->
-                        launch {
-                            processStream(streamIndex, activeSession)
-                        }
-                    }
-                    
-                    // Progress monitor
-                    val progressJob = launch {
-                        monitorProgress(activeSession)
-                    }
-                    
-                    // Wait for all streams to complete
-                    streamJobs.joinAll()
-                    progressJob.cancel()
-                    
-                    // Finalize
-                    if (!activeSession.isCancelled) {
-                        if (chunkMap.isComplete()) {
-                            finalizeTransfer(activeSession)
-                        } else {
-                            handleIncompleteTransfer(activeSession)
-                        }
-                    }
-                    
-                } catch (e: CancellationException) {
-                    Timber.d("Transfer cancelled: ${session.id}")
-                } catch (e: Exception) {
-                    Timber.e(e, "Transfer failed: ${session.id}")
-                    handleTransferError(activeSession, e)
-                } finally {
-                    activeSessions.remove(session.id)
+                // Progress monitor
+                val progressJob = launch {
+                    monitorProgress(activeSession)
                 }
+                
+                // Wait for all streams to complete
+                streamJobs.joinAll()
+                progressJob.cancel()
+                
+                // Finalize
+                if (!activeSession.isCancelled) {
+                    if (chunkMap.isComplete()) {
+                        finalizeTransfer(activeSession)
+                    } else {
+                        handleIncompleteTransfer(activeSession)
+                    }
+                }
+                
+            } catch (e: CancellationException) {
+                Timber.d("Transfer cancelled: ${session.id}")
+            } catch (e: Exception) {
+                Timber.e(e, "Transfer failed: ${session.id}")
+                handleTransferError(activeSession, e)
+            } finally {
+                activeSessions.remove(session.id)
+            }
         }
     }
     
