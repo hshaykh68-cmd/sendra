@@ -394,8 +394,8 @@ private fun ShimmerProgressOverlay() {
                         Color.White.copy(alpha = 0.3f),
                         Color.Transparent
                     ),
-                    startX = { width: Float -> (width * translateX) as Float },
-                    endX = { width: Float -> (width * (translateX + 0.5f)) as Float }
+                    startX = { width: Float -> width * translateX },
+                    endX = { width: Float -> width * translateX + width * 0.5f }
                 )
             )
     )
