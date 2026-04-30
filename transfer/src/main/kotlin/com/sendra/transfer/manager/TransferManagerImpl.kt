@@ -12,6 +12,7 @@ import com.sendra.domain.repository.TransferRepository
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
+import kotlin.coroutines.coroutineContext
 import timber.log.Timber
 import java.io.IOException
 import java.util.concurrent.ConcurrentHashMap
@@ -189,39 +190,40 @@ class TransferManagerImpl @Inject constructor(
                 
                 activeSessions[session.id] = activeSession
                 
-                // Start parallel stream processing
-                val streamJobs = (0 until SendraConstants.PARALLEL_STREAMS).map { streamIndex ->
-                    launch {
-                        processStream(streamIndex, activeSession)
+                try {
+                    // Start parallel stream processing
+                    val streamJobs = (0 until SendraConstants.PARALLEL_STREAMS).map { streamIndex ->
+                        launch {
+                            processStream(streamIndex, activeSession)
+                        }
                     }
-                }
-                
-                // Progress monitor
-                val progressJob = launch {
-                    monitorProgress(activeSession)
-                }
-                
-                // Wait for all streams to complete
-                streamJobs.joinAll()
-                progressJob.cancel()
-                
-                // Finalize
-                if (!activeSession.isCancelled) {
-                    if (chunkMap.isComplete()) {
-                        finalizeTransfer(activeSession)
-                    } else {
-                        handleIncompleteTransfer(activeSession)
+                    
+                    // Progress monitor
+                    val progressJob = launch {
+                        monitorProgress(activeSession)
                     }
+                    
+                    // Wait for all streams to complete
+                    streamJobs.joinAll()
+                    progressJob.cancel()
+                    
+                    // Finalize
+                    if (!activeSession.isCancelled) {
+                        if (chunkMap.isComplete()) {
+                            finalizeTransfer(activeSession)
+                        } else {
+                            handleIncompleteTransfer(activeSession)
+                        }
+                    }
+                    
+                } catch (e: CancellationException) {
+                    Timber.d("Transfer cancelled: ${session.id}")
+                } catch (e: Exception) {
+                    Timber.e(e, "Transfer failed: ${session.id}")
+                    handleTransferError(activeSession, e)
+                } finally {
+                    activeSessions.remove(session.id)
                 }
-                
-            } catch (e: CancellationException) {
-                Timber.d("Transfer cancelled: ${session.id}")
-            } catch (e: Exception) {
-                Timber.e(e, "Transfer failed: ${session.id}")
-                handleTransferError(activeSession, e)
-            } finally {
-                activeSessions.remove(session.id)
-            }
         }
     }
     
@@ -238,7 +240,7 @@ class TransferManagerImpl @Inject constructor(
                 // Read file data
                 val file = session.session.files[nextChunk.fileIndex]
                 val chunkData = fileRepository.readFileChunk(
-                    fileUri = file.uri,
+                    fileUri = file.id,
                     offset = nextChunk.offset,
                     length = nextChunk.size
                 )
