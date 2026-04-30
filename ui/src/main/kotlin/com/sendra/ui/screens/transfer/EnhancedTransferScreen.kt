@@ -382,6 +382,7 @@ private fun ShimmerProgressOverlay() {
         label = "shimmer"
     )
     
+    val tx = translateX
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -394,8 +395,8 @@ private fun ShimmerProgressOverlay() {
                         Color.White.copy(alpha = 0.3f),
                         Color.Transparent
                     ),
-                    startX = { width: Float -> width * translateX },
-                    endX = { width: Float -> width * translateX + width * 0.5f }
+                    startX = { width -> width * tx },
+                    endX = { width -> width * tx + width * 0.5f }
                 )
             )
     )
