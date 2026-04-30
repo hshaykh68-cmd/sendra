@@ -4,7 +4,6 @@ import com.sendra.data.local.database.*
 import com.sendra.domain.model.*
 import com.sendra.domain.repository.ChunkBitmap
 import com.sendra.domain.repository.TransferRepository
-import com.sendra.domain.repository.TransferProgress
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -97,13 +96,25 @@ class TransferRepositoryImpl @Inject constructor(
         return transferDao.getSessionFlow(sessionId).map { entity ->
             entity?.let {
                 TransferProgress(
+                    sessionId = sessionId,
                     bytesTransferred = it.bytesTransferred,
                     totalBytes = it.totalBytes,
-                    percentage = if (it.totalBytes > 0) {
-                        (it.bytesTransferred * 100 / it.totalBytes).toInt()
-                    } else 0
+                    currentFileIndex = 0,
+                    totalFiles = it.fileCount,
+                    currentFileBytesTransferred = 0,
+                    chunksCompleted = 0,
+                    chunksTotal = 0
                 )
-            } ?: TransferProgress(0, 0, 0)
+            } ?: TransferProgress(
+                sessionId = sessionId,
+                bytesTransferred = 0,
+                totalBytes = 0,
+                currentFileIndex = 0,
+                totalFiles = 0,
+                currentFileBytesTransferred = 0,
+                chunksCompleted = 0,
+                chunksTotal = 0
+            )
         }
     }
 
