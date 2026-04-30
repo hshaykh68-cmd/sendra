@@ -25,8 +25,7 @@ import com.sendra.domain.model.FileInfo
 @Composable
 fun HomeScreen(
     onNavigateToRadar: (List<FileInfo>) -> Unit,
-    onNavigateToHistory: () -> Unit,
-    onNavigateToSettings: () -> Unit,
+    onNavigateToReceiver: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
@@ -51,14 +50,7 @@ fun HomeScreen(
         }
     }
     
-    Scaffold(
-        topBar = {
-            HomeTopBar(
-                onHistoryClick = onNavigateToHistory,
-                onSettingsClick = onNavigateToSettings
-            )
-        }
-    ) { padding ->
+    Scaffold { padding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -134,24 +126,20 @@ fun HomeScreen(
             
             // Secondary actions row
             Row(
-                horizontalArrangement = Arrangement.spacedBy(16.dp)
+                horizontalArrangement = Arrangement.spacedBy(24.dp)
             ) {
                 HomeActionButton(
                     icon = Icons.Default.Download,
+                    iconTint = MaterialTheme.colorScheme.secondary,
                     label = "Receive",
-                    onClick = { /* Enable receive mode */ }
+                    onClick = onNavigateToReceiver
                 )
                 
                 HomeActionButton(
-                    icon = Icons.Default.History,
-                    label = "History",
-                    onClick = onNavigateToHistory
-                )
-                
-                HomeActionButton(
-                    icon = Icons.Default.Settings,
-                    label = "Settings",
-                    onClick = onNavigateToSettings
+                    icon = Icons.Default.QrCode,
+                    iconTint = MaterialTheme.colorScheme.tertiary,
+                    label = "Scan QR",
+                    onClick = { /* TODO: QR code scanner */ }
                 )
             }
             
@@ -176,6 +164,7 @@ fun HomeScreen(
 @Composable
 private fun HomeActionButton(
     icon: androidx.compose.ui.graphics.vector.ImageVector,
+    iconTint: androidx.compose.ui.graphics.Color,
     label: String,
     onClick: () -> Unit
 ) {
@@ -185,24 +174,25 @@ private fun HomeActionButton(
     ) {
         Box(
             modifier = Modifier
-                .size(56.dp)
+                .size(64.dp)
                 .background(
-                    color = MaterialTheme.colorScheme.surfaceVariant,
-                    shape = RoundedCornerShape(16.dp)
+                    color = iconTint.copy(alpha = 0.15f),
+                    shape = RoundedCornerShape(20.dp)
                 ),
             contentAlignment = Alignment.Center
         ) {
             Icon(
                 imageVector = icon,
                 contentDescription = label,
-                tint = MaterialTheme.colorScheme.onSurfaceVariant
+                tint = iconTint,
+                modifier = Modifier.size(28.dp)
             )
         }
-        Spacer(modifier = Modifier.height(4.dp))
+        Spacer(modifier = Modifier.height(8.dp))
         Text(
             text = label,
-            style = MaterialTheme.typography.labelSmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onSurface
         )
     }
 }
@@ -253,23 +243,3 @@ private fun DiscoveryActiveIndicator(deviceCount: Int) {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun HomeTopBar(
-    onHistoryClick: () -> Unit,
-    onSettingsClick: () -> Unit
-) {
-    TopAppBar(
-        title = { Text("Sendra") },
-        actions = {
-            IconButton(onClick = onHistoryClick) {
-                Icon(Icons.Default.History, contentDescription = "History")
-            }
-            IconButton(onClick = onSettingsClick) {
-                Icon(Icons.Default.Settings, contentDescription = "Settings")
-            }
-        }
-    )
-}
-
-// ViewModel for HomeScreen
