@@ -12,9 +12,6 @@ import android.os.Build
 import android.os.IBinder
 import android.os.PowerManager
 import androidx.core.app.NotificationCompat
-import com.sendra.app.MainActivity
-import com.sendra.app.R
-import com.sendra.app.SendraApplication
 import com.sendra.transfer.manager.TransferManager
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
@@ -157,23 +154,10 @@ class TransferForegroundService : Service() {
         showResumeAction: Boolean = false,
         sessionId: String? = null
     ): Notification {
-        val intent = Intent(this, MainActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-            putExtra(EXTRA_SESSION_ID, sessionId)
-        }
-        
-        val pendingIntent = PendingIntent.getActivity(
-            this,
-            0,
-            intent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
-        
-        val builder = NotificationCompat.Builder(this, SendraApplication.CHANNEL_TRANSFER)
+        val builder = NotificationCompat.Builder(this, CHANNEL_TRANSFER)
             .setContentTitle(title)
             .setContentText(content)
-            .setSmallIcon(R.drawable.ic_notification_transfer)
-            .setContentIntent(pendingIntent)
+            .setSmallIcon(android.R.drawable.stat_sys_upload)
             .setOngoing(true)
             .setProgress(100, progress, progress == 0)
             .setOnlyAlertOnce(true)
@@ -251,6 +235,7 @@ class TransferForegroundService : Service() {
     companion object {
         const val NOTIFICATION_ID = 1001
         const val EXTRA_SESSION_ID = "session_id"
+        const val CHANNEL_TRANSFER = "transfer_channel"
         
         const val ACTION_START_TRANSFER = "com.sendra.START_TRANSFER"
         const val ACTION_PAUSE = "com.sendra.PAUSE"
