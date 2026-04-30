@@ -2,7 +2,7 @@ package com.sendra.transfer.manager
 
 import com.sendra.connection.manager.ConnectionManager
 import com.sendra.connection.transport.Transport
-nimport com.sendra.core.constants.SendraConstants
+import com.sendra.core.constants.SendraConstants
 import com.sendra.core.dispatcher.DispatcherProvider
 import com.sendra.core.extensions.throttleLatest
 import com.sendra.core.result.Result
